@@ -1,0 +1,8 @@
+node_modules/
+temporary screenshots/
+.claude/
+memory/
+*.png
+!brand/**/*.png
+!brand/**/*.jpg
+!brand/**/*.jpeg
