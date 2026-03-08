@@ -553,6 +553,11 @@
     .hero-stat-num span { color: var(--gold-light); font-size: 22px; }
     .hero-stat-label { font-size: 13px; color: rgba(236,231,216,0.85); line-height: 1.45; font-weight: 500; }
 
+    /* ── Mobile-only hero stats ──────────────────── */
+    .hero-mobile-stats {
+      display: none;
+    }
+
     /* ── Trust strip (light) ─────────────────────── */
     .trust-strip {
       border-bottom: 1px solid var(--border-l-s);
@@ -1439,14 +1444,54 @@
       .hamburger span    { width: 18px; }
 
       /* ── Hero ── */
-      .hero              { padding: 48px 16px 40px; min-height: auto; }
-      .hero-heading      { font-size: clamp(26px, 8vw, 36px); }
-      .hero-sub          { font-size: 13.5px; margin-bottom: 24px; line-height: 1.65; }
-      .hero-actions      { gap: 10px; flex-direction: column; }
-      .hero-actions a, .hero-actions button { width: 100%; text-align: center; }
-      .eyebrow           { font-size: 9.5px; padding: 4px 10px; }
-      .hero-stats        { gap: 10px; }
-      .hero-stat-box     { padding: 14px 16px; }
+      .hero              { padding: 44px 20px 48px; min-height: auto; }
+      .hero-heading      { font-size: clamp(28px, 8vw, 38px); margin-bottom: 16px; }
+      .hero-sub          { font-size: 13.5px; margin-bottom: 28px; line-height: 1.65; max-width: 100%; }
+      .hero-actions      { gap: 10px; flex-direction: column; margin-bottom: 0; }
+      .hero-actions a, .hero-actions button { width: 100%; text-align: center; justify-content: center; }
+      .eyebrow           { font-size: 9.5px; padding: 4px 10px; margin-bottom: 20px; }
+
+      /* Mobile stats */
+      .hero-mobile-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .hero-mobile-stat {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(198,153,58,0.25);
+        border-radius: 12px;
+        padding: 18px 16px 16px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-mobile-stat::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(to right, var(--gold), transparent);
+      }
+      .hero-mobile-stat-num {
+        font-family: 'Playfair Display', serif;
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--gold-pale);
+        line-height: 1;
+        margin-bottom: 8px;
+        letter-spacing: -0.02em;
+      }
+      .hero-mobile-stat-num span {
+        font-size: 22px;
+        color: var(--gold-light);
+      }
+      .hero-mobile-stat-label {
+        font-size: 11.5px;
+        color: rgba(236,231,216,0.7);
+        line-height: 1.4;
+        font-weight: 400;
+      }
 
       /* ── Trust strip ── */
       .trust-strip-inner { grid-template-columns: 1fr 1fr; padding: 0 16px; }
@@ -1901,6 +1946,20 @@
             <span class="en">Practice Areas</span>
             <span class="de">Leistungen</span>
           </a>
+        </div>
+
+        <!-- Mobile-only stats -->
+        <div class="hero-mobile-stats">
+          <div class="hero-mobile-stat">
+            <div class="hero-mobile-stat-num">30<span>+</span></div>
+            <div class="hero-mobile-stat-label en">Years of tax law expertise</div>
+            <div class="hero-mobile-stat-label de">Jahre Steuerrechts­erfahrung</div>
+          </div>
+          <div class="hero-mobile-stat">
+            <div class="hero-mobile-stat-num">1000<span>+</span></div>
+            <div class="hero-mobile-stat-label en">Businesses advised</div>
+            <div class="hero-mobile-stat-label de">Beratene Unternehmen</div>
+          </div>
         </div>
 
       </div>
