@@ -1420,58 +1420,79 @@
       .nav-right         { display: none !important; }
       .hamburger         { display: flex; }
       .mob-lang-header   { display: flex; }
-      .nav-inner         { display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 72px; gap: 0; }
+      .nav-inner         { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 68px; gap: 0; }
     }
 
     @media (max-width: 640px) {
-      /* Nav */
-      .nav-inner         { padding: 0 16px; height: 64px; }
+      /* ── Nav ── */
+      .nav-inner         { padding: 0 16px; height: 58px; }
       .logo-sub          { display: none !important; }
-      .logo-name         { font-size: 16px; white-space: nowrap; }
-      .logo-mark         { width: 38px; height: 38px; font-size: 12px; border-radius: 7px; }
-      .logo-divider      { height: 28px; }
-      .logo-wrap         { gap: 12px; }
+      .logo-name         { font-size: 12px; white-space: nowrap; letter-spacing: 0.04em; }
+      .logo-mark         { width: 32px; height: 32px; font-size: 10px; border-radius: 6px; }
+      .logo-divider      { height: 22px; }
+      .logo-wrap         { gap: 10px; }
       .nav-datev-badge   { display: none !important; }
       .btn-nav           { display: none; }
+      .mob-lang-header   { gap: 1px; }
+      .mob-hdr-lang      { padding: 3px 8px; font-size: 10.5px; }
+      .hamburger         { width: 40px; height: 40px; }
+      .hamburger span    { width: 18px; }
 
-      /* Hero */
-      .hero              { padding: 60px 16px 48px; min-height: auto; }
-      .hero-heading      { font-size: clamp(30px, 9vw, 42px); }
-      .hero-sub          { font-size: 14px; margin-bottom: 28px; }
-      .hero-actions      { gap: 10px; }
-      .eyebrow           { font-size: 10px; padding: 5px 12px; }
+      /* ── Hero ── */
+      .hero              { padding: 48px 16px 40px; min-height: auto; }
+      .hero-heading      { font-size: clamp(26px, 8vw, 36px); }
+      .hero-sub          { font-size: 13.5px; margin-bottom: 24px; line-height: 1.65; }
+      .hero-actions      { gap: 10px; flex-direction: column; }
+      .hero-actions a, .hero-actions button { width: 100%; text-align: center; }
+      .eyebrow           { font-size: 9.5px; padding: 4px 10px; }
+      .hero-stats        { gap: 10px; }
+      .hero-stat-box     { padding: 14px 16px; }
 
-      /* Trust strip */
+      /* ── Trust strip ── */
       .trust-strip-inner { grid-template-columns: 1fr 1fr; padding: 0 16px; }
-      .trust-item        { padding: 18px 14px; border-right: none; border-bottom: 1px solid var(--border-l); }
+      .trust-item        { padding: 16px 12px; border-right: none; border-bottom: 1px solid var(--border-l); }
       .trust-item:nth-child(odd)  { border-right: 1px solid var(--border-l); }
       .trust-item:nth-last-child(-n+2) { border-bottom: none; }
 
-      /* Sections */
-      .services-section  { padding: 64px 16px; }
-      .attorney-section  { padding: 0 16px 64px; }
-      .values-section    { padding: 64px 16px; }
-      .stats-section     { padding: 64px 16px; }
-      .contact-section   { padding: 64px 16px; }
+      /* ── Sections ── */
+      .services-section  { padding: 44px 16px; }
+      .attorney-section  { padding: 0 16px 44px; }
+      .values-section    { padding: 44px 16px; }
+      .stats-section     { padding: 44px 16px; }
+      .contact-section   { padding: 44px 16px; }
+      .cta-band          { padding: 48px 16px; }
+      .img-strip         { padding: 36px 16px; }
+      .bio-section       { padding: 44px 0; }
 
-      /* Cards */
-      .service-card      { padding: 28px 22px 32px; }
-      .value-card        { padding: 26px 22px; }
-      .stat-item         { padding: 36px 20px; }
+      /* ── Section headings ── */
+      .services-heading  { font-size: 22px; }
+      .attorney-heading  { font-size: 20px; }
+      .contact-heading   { font-size: 22px; }
+      .cta-band-inner h2 { font-size: 24px; }
+      .section-label     { font-size: 9px; letter-spacing: 0.18em; }
 
-      /* Attorney */
-      .attorney-photo    { min-height: 260px; }
-      .attorney-text     { padding: 32px 22px; }
+      /* ── Cards & items ── */
+      .service-card      { padding: 24px 18px 28px; }
+      .value-card        { padding: 22px 18px; }
+      .stat-item         { padding: 28px 16px; }
+      .stat-num          { font-size: 40px; }
 
-      /* Contact form */
-      .contact-form-wrap { padding: 28px 18px; }
+      /* ── Attorney ── */
+      .attorney-photo    { min-height: 240px; }
+      .attorney-text     { padding: 28px 18px; }
+      .bio-photo-col     { min-height: 300px; }
+      .bio-content-col   { padding: 36px 20px; }
+
+      /* ── Contact ── */
+      .contact-form-wrap { padding: 24px 16px; }
       .form-row          { grid-template-columns: 1fr; }
+      .contact-info-item { padding: 12px 0; }
 
-      /* Footer */
-      footer             { padding: 52px 16px 28px; }
-      .footer-top        { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom     { flex-direction: column; gap: 14px; text-align: center; }
-      .footer-legal      { flex-wrap: wrap; justify-content: center; gap: 16px; }
+      /* ── Footer ── */
+      footer             { padding: 44px 16px 24px; }
+      .footer-top        { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom     { flex-direction: column; gap: 12px; text-align: center; }
+      .footer-legal      { flex-wrap: wrap; justify-content: center; gap: 14px; }
     }
 
     /* ── Scroll Reveal ───────────────────────────── */
