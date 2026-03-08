@@ -1242,6 +1242,31 @@
       border-radius: 2px;
     }
 
+    /* ── Mobile header language toggle ───────────── */
+    .mob-lang-header {
+      display: none;
+      align-items: center;
+      gap: 1px;
+      background: var(--cream-alt);
+      border: 1px solid var(--border-l-s);
+      border-radius: 5px;
+      padding: 3px;
+    }
+    .mob-hdr-lang {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.07em;
+      padding: 4px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .mob-hdr-lang.active { background: var(--navy); color: var(--gold-pale); }
+
     /* ── Hamburger menu button ────────────────────── */
     .hamburger {
       display: none;
@@ -1394,6 +1419,7 @@
       .nav-datev-badge   { display: none !important; }
       .nav-right         { display: none !important; }
       .hamburger         { display: flex; }
+      .mob-lang-header   { display: flex; }
       .nav-inner         { display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 72px; gap: 0; }
     }
 
@@ -1763,6 +1789,11 @@
         <li><a href="#attorney"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span></a></li>
         <li><a href="#contact"><span class="en">Contact</span><span class="de">Kontakt</span></a></li>
       </ul>
+
+      <div class="mob-lang-header">
+        <button id="mob-hdr-de" class="mob-hdr-lang active" onclick="setLang('de')">DE</button>
+        <button id="mob-hdr-en" class="mob-hdr-lang" onclick="setLang('en')">EN</button>
+      </div>
 
       <button class="hamburger" id="hamburger-btn" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
@@ -2457,6 +2488,8 @@
       document.getElementById('btn-de').classList.toggle('active', lang === 'de');
       document.getElementById('mobile-btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('mobile-btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('mob-hdr-en').classList.toggle('active', lang === 'en');
+      document.getElementById('mob-hdr-de').classList.toggle('active', lang === 'de');
       // Update select options text
       document.querySelectorAll('#input-area option').forEach(opt => {
         const text = opt.getAttribute('data-' + lang);
