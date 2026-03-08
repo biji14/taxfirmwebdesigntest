@@ -1248,70 +1248,120 @@
       display: none;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       gap: 5px;
-      width: 36px;
-      height: 36px;
-      background: none;
+      width: 42px;
+      height: 42px;
+      background: var(--navy);
       border: none;
+      border-radius: 8px;
       cursor: pointer;
-      padding: 4px;
+      padding: 0;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(13,30,59,0.25);
     }
     .hamburger span {
       display: block;
+      width: 20px;
       height: 2px;
-      background: var(--navy);
+      background: var(--gold-pale);
       border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.25s ease;
+      transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
     }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger span:nth-child(3) { width: 14px; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 20px; }
     .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 20px; }
 
-    /* ── Mobile menu drawer ──────────────────────── */
+    /* ── Mobile menu overlay ─────────────────────── */
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 64px;
-      left: 0; right: 0;
-      background: #fff;
-      border-bottom: 1px solid var(--border-l-s);
-      box-shadow: 0 8px 32px rgba(13,30,59,0.12);
-      z-index: 99;
-      padding: 20px 24px 28px;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--navy);
+      z-index: 98;
       flex-direction: column;
-      gap: 0;
+      padding: 100px 32px 48px;
+      opacity: 0;
+      transform: translateY(-12px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      display: block;
-      padding: 14px 0;
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--text-heading);
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-menu-links { display: flex; flex-direction: column; gap: 0; flex: 1; }
+    .mobile-menu-links a {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: rgba(236,231,216,0.85);
       text-decoration: none;
-      border-bottom: 1px solid var(--border-l);
-      transition: color 0.2s ease;
+      border-bottom: 1px solid rgba(198,153,58,0.15);
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease, padding-left 0.2s ease;
     }
-    .mobile-menu a:last-of-type { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--gold-dark); }
-    .mobile-menu-footer {
-      margin-top: 20px;
+    .mobile-menu-links a:active { color: var(--gold-light); padding-left: 8px; }
+    .mobile-menu-links a:last-child { border-bottom: none; }
+    .mobile-menu-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(198,153,58,0.15);
+    }
+    .mobile-menu-cta {
+      display: block;
+      background: var(--gold);
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(198,153,58,0.35);
+    }
+    .mobile-menu-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
     }
     .mobile-menu-datev {
       display: flex;
       align-items: center;
       background: #f0f2f5;
       border-radius: 6px;
-      padding: 4px 12px;
-      border: 1px solid var(--border-l-s);
+      padding: 5px 14px;
       text-decoration: none;
     }
     .mobile-menu-datev img { height: 22px; width: auto; display: block; }
+    .mobile-lang-switcher {
+      display: flex;
+      gap: 2px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(198,153,58,0.22);
+      border-radius: 6px;
+      padding: 3px;
+    }
+    .mobile-lang-btn {
+      background: transparent;
+      border: none;
+      color: rgba(236,231,216,0.6);
+      font-size: 12px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.07em;
+      padding: 5px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .mobile-lang-btn.active { background: var(--gold); color: #fff; }
 
     @media (max-width: 1020px) {
       .hero-inner        { grid-template-columns: 1fr; gap: 48px; }
@@ -1719,17 +1769,26 @@
 
   <!-- ── Mobile Menu ───────────────────────────────── -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#services" onclick="closeMobileMenu()"><span class="en">Practice Areas</span><span class="de">Leistungen</span></a>
-    <a href="#attorney" onclick="closeMobileMenu()"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span></a>
-    <a href="#contact" onclick="closeMobileMenu()"><span class="en">Contact</span><span class="de">Kontakt</span></a>
-    <div class="mobile-menu-footer">
-      <a href="#datev" class="mobile-menu-datev" onclick="closeMobileMenu()">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Datev.svg/1280px-Datev.svg.png" alt="DATEV" />
-      </a>
-      <a href="#contact" class="btn-primary" onclick="closeMobileMenu()" style="font-size:13px;padding:10px 18px;">
+    <div class="mobile-menu-links">
+      <a href="#services" onclick="closeMobileMenu()"><span class="en">Practice Areas</span><span class="de">Leistungen</span></a>
+      <a href="#attorney" onclick="closeMobileMenu()"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span></a>
+      <a href="#datev" onclick="closeMobileMenu()">DATEV</a>
+      <a href="#contact" onclick="closeMobileMenu()"><span class="en">Contact</span><span class="de">Kontakt</span></a>
+    </div>
+    <div class="mobile-menu-bottom">
+      <a href="#contact" class="mobile-menu-cta" onclick="closeMobileMenu()">
         <span class="en">Request Consultation</span>
         <span class="de">Beratung anfragen</span>
       </a>
+      <div class="mobile-menu-row">
+        <a href="#datev" class="mobile-menu-datev" onclick="closeMobileMenu()">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Datev.svg/1280px-Datev.svg.png" alt="DATEV" />
+        </a>
+        <div class="mobile-lang-switcher">
+          <button class="mobile-lang-btn active" id="mobile-btn-de" onclick="setLang('de')">DE</button>
+          <button class="mobile-lang-btn" id="mobile-btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -2367,6 +2426,8 @@
       document.documentElement.setAttribute('lang', lang);
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('mobile-btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('mobile-btn-de').classList.toggle('active', lang === 'de');
       // Update select options text
       document.querySelectorAll('#input-area option').forEach(opt => {
         const text = opt.getAttribute('data-' + lang);
