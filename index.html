@@ -3,7 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kanzlei Dr. Dr. Hausmann — Steuerrecht & Steuerberatung, Berlin</title>
+  <title>Kanzlei Dr. Dr. Hausmann — Fachanwalt Steuerrecht Berlin | Steuerberatung</title>
+
+  <!-- ── SEO Meta ───────────────────────────────────── -->
+  <meta name="description" content="Kanzlei Dr. Dr. Hausmann — Fachanwalt für Steuerrecht in Berlin. Steuerberatung, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung. Jetzt Beratung anfragen." />
+  <meta name="keywords" content="Fachanwalt Steuerrecht Berlin, Steuerberatung Berlin, Steuerstrafrecht Berlin, Steuergestaltung Unternehmen, Rechtsanwalt Steuerrecht Berlin, Dr. Hausmann Steuerrecht" />
+  <meta name="author" content="Dr. Dr. Hans-Christian Hausmann" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kanzlei-hausmann.berlin/" />
+
+  <!-- ── Open Graph (Social Media) ─────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kanzlei-hausmann.berlin/" />
+  <meta property="og:title" content="Kanzlei Dr. Dr. Hausmann — Fachanwalt Steuerrecht Berlin" />
+  <meta property="og:description" content="Fachanwalt für Steuerrecht in Berlin. Steuerberatung, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung." />
+  <meta property="og:image" content="https://kanzlei-hausmann.berlin/brand/Kanzlei hausmann profile.png" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:site_name" content="Kanzlei Dr. Dr. Hausmann" />
+
+  <!-- ── Twitter Card ───────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kanzlei Dr. Dr. Hausmann — Fachanwalt Steuerrecht Berlin" />
+  <meta name="twitter:description" content="Fachanwalt für Steuerrecht in Berlin. Steuerberatung, Steuerstrafrecht und Steuergestaltung für Unternehmen." />
+  <meta name="twitter:image" content="https://kanzlei-hausmann.berlin/brand/Kanzlei hausmann profile.png" />
+
+  <!-- ── Schema.org Structured Data ───────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Kanzlei Dr. Dr. Hausmann",
+    "alternateName": "Dr. Dr. Hausmann Steuerrecht & Steuerberatung",
+    "url": "https://kanzlei-hausmann.berlin",
+    "logo": "https://kanzlei-hausmann.berlin/brand/Kanzlei hausmann profile.png",
+    "image": "https://kanzlei-hausmann.berlin/brand/Kanzlei hausmann profile.png",
+    "description": "Berliner Rechtsanwalts- und Steuerkanzlei mit Schwerpunkt Steuerrecht, Steuerstrafrecht, Steuerberatung und Steuergestaltung für Unternehmen.",
+    "telephone": "+49-30-85994000",
+    "email": "info@kanzlei-hausmann.berlin",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bundesallee 91",
+      "addressLocality": "Berlin",
+      "postalCode": "12161",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.4664,
+      "longitude": 13.3333
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Berlin"
+    },
+    "serviceType": ["Steuerrecht", "Steuerstrafrecht", "Steuerberatung", "Steuergestaltung"],
+    "priceRange": "€€€",
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Dr. Hans-Christian Hausmann",
+      "jobTitle": "Rechtsanwalt & Fachanwalt für Steuerrecht",
+      "alumniOf": "Freie Universität Berlin",
+      "hasCredential": ["Dr. iur.", "Fachanwalt für Steuerrecht", "LL.M. University of Glasgow"]
+    },
+    "sameAs": []
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,13 +150,13 @@
     }
 
     .nav-inner {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 0 40px;
       height: 84px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       gap: 24px;
     }
 
@@ -156,7 +230,7 @@
 
     .nav-links a:hover { color: var(--navy); }
 
-    .nav-right { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .nav-right { display: flex; align-items: center; gap: 14px; justify-content: flex-end; }
 
     .lang-switcher {
       display: flex;
@@ -1531,7 +1605,7 @@
   <!-- ── Navigation ───────────────────────────────── -->
   <nav>
     <div class="nav-inner">
-      <a href="#" class="logo-wrap">
+      <a href="#hero" class="logo-wrap">
         <div class="logo-mark" style="font-size:14px;letter-spacing:0.04em;">HCH</div>
         <div class="logo-divider"></div>
         <div class="logo-text">
@@ -1548,8 +1622,8 @@
       </ul>
 
       <div class="nav-right">
-        <a href="#datev" style="display:flex;align-items:center;background:#fff;border-radius:7px;padding:5px 12px;box-shadow:0 1px 8px rgba(13,30,59,0.10),0 0 0 1.5px rgba(0,201,142,0.35);text-decoration:none;transition:box-shadow 0.2s ease,transform 0.2s ease;" onmouseover="this.style.boxShadow='0 2px 16px rgba(13,30,59,0.15),0 0 0 2px rgba(0,201,142,0.6)';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='0 1px 8px rgba(13,30,59,0.10),0 0 0 1.5px rgba(0,201,142,0.35)';this.style.transform='translateY(0)'">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Datev.svg/1280px-Datev.svg.png" alt="DATEV" style="height:30px;width:auto;display:block;" />
+        <a href="#datev" style="display:flex;align-items:center;background:#fff;border-radius:7px;padding:5px 14px;border:1px solid var(--border-l-s);box-shadow:0 1px 6px rgba(13,30,59,0.08);text-decoration:none;transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease;" onmouseover="this.style.borderColor='rgba(198,153,58,0.5)';this.style.boxShadow='0 3px 14px rgba(13,30,59,0.12)';this.style.transform='translateY(-1px)'" onmouseout="this.style.borderColor='rgba(13,30,59,0.15)';this.style.boxShadow='0 1px 6px rgba(13,30,59,0.08)';this.style.transform='translateY(0)'">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Datev.svg/1280px-Datev.svg.png" alt="DATEV" style="height:28px;width:auto;display:block;" />
         </a>
         <div class="lang-switcher">
           <button class="lang-btn active" id="btn-de" onclick="setLang('de')">DE</button>
@@ -1564,7 +1638,7 @@
   </nav>
 
   <!-- ── Hero (navy dark) ──────────────────────────── -->
-  <section class="hero">
+  <section class="hero" id="hero">
 
     <div class="hero-grid"></div>
 
@@ -1810,7 +1884,7 @@
   </section>
 
   <!-- ── Biography ────────────────────────────────── -->
-  <section class="bio-section" id="attorney">
+  <section class="bio-section" id="bio">
     <div class="bio-grid">
 
       <!-- Left: Photo panel -->
@@ -2004,47 +2078,49 @@
             <span class="en">Request a Consultation</span>
             <span class="de">Beratungsgespräch anfragen</span>
           </h3>
-          <div class="form-row" style="margin-bottom:0;">
-            <div class="form-group">
-              <label class="form-label en">First Name</label>
-              <label class="form-label de">Vorname</label>
-              <input type="text" class="form-input" />
+          <form id="contact-form" novalidate>
+            <div class="form-row" style="margin-bottom:0;">
+              <div class="form-group">
+                <label class="form-label en" for="input-firstname">First Name</label>
+                <label class="form-label de" for="input-firstname">Vorname</label>
+                <input type="text" id="input-firstname" name="firstname" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label en" for="input-lastname">Last Name</label>
+                <label class="form-label de" for="input-lastname">Nachname</label>
+                <input type="text" id="input-lastname" name="lastname" class="form-input" required />
+              </div>
             </div>
             <div class="form-group">
-              <label class="form-label en">Last Name</label>
-              <label class="form-label de">Nachname</label>
-              <input type="text" class="form-input" />
+              <label class="form-label en" for="input-email">E-Mail</label>
+              <label class="form-label de" for="input-email">E-Mail</label>
+              <input type="email" id="input-email" name="email" class="form-input" required />
             </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">E-Mail</label>
-            <input type="email" class="form-input" />
-          </div>
-          <div class="form-group">
-            <label class="form-label en">Practice Area</label>
-            <label class="form-label de">Leistungsbereich</label>
-            <select class="form-select">
-              <option class="en">Please select…</option>
-              <option class="de">Bitte wählen…</option>
-              <option class="en">Tax Law &amp; Criminal Tax Law</option>
-              <option class="de">Steuerrecht &amp; Steuerstrafrecht</option>
-              <option class="en">Tax Advisory &amp; Consulting</option>
-              <option class="de">Steuerberatung</option>
-              <option class="en">Tax Planning for Businesses</option>
-              <option class="de">Steuergestaltung bei Unternehmen</option>
-              <option class="en">Other / General Enquiry</option>
-              <option class="de">Sonstiges / Allgemeine Anfrage</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label en">Message</label>
-            <label class="form-label de">Nachricht</label>
-            <textarea class="form-textarea"></textarea>
-          </div>
-          <button class="btn-primary" style="width:100%;">
-            <span class="en">Send Request</span>
-            <span class="de">Anfrage senden</span>
-          </button>
+            <div class="form-group">
+              <label class="form-label en" for="input-area">Practice Area</label>
+              <label class="form-label de" for="input-area">Leistungsbereich</label>
+              <select id="input-area" name="area" class="form-select">
+                <option value="" class="en" data-en="Please select…" data-de="Bitte wählen…">Please select…</option>
+                <option value="tax-law" data-en="Tax Law &amp; Criminal Tax Law" data-de="Steuerrecht &amp; Steuerstrafrecht">Tax Law &amp; Criminal Tax Law</option>
+                <option value="tax-advisory" data-en="Tax Advisory &amp; Consulting" data-de="Steuerberatung">Tax Advisory &amp; Consulting</option>
+                <option value="tax-planning" data-en="Tax Planning for Businesses" data-de="Steuergestaltung bei Unternehmen">Tax Planning for Businesses</option>
+                <option value="other" data-en="Other / General Enquiry" data-de="Sonstiges / Allgemeine Anfrage">Other / General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label en" for="input-message">Message</label>
+              <label class="form-label de" for="input-message">Nachricht</label>
+              <textarea id="input-message" name="message" class="form-textarea"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;">
+              <span class="en">Send Request</span>
+              <span class="de">Anfrage senden</span>
+            </button>
+            <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(0,180,100,0.08);border:1px solid rgba(0,180,100,0.25);border-radius:8px;text-align:center;">
+              <p class="en" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Your message has been sent. We will be in touch shortly.</p>
+              <p class="de" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.</p>
+            </div>
+          </form>
           <p class="form-note en">All information is treated with strict confidentiality in accordance with German data protection law (DSGVO / GDPR).</p>
           <p class="form-note de">Alle Angaben werden streng vertraulich gemäß dem deutschen Datenschutzrecht (DSGVO) behandelt.</p>
         </div>
@@ -2120,7 +2196,7 @@
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <a href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+          <a href="#hero" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
             <div class="footer-logo-mark" style="font-size:14px;letter-spacing:0.04em;">HCH</div>
             <div class="logo-text">
               <span class="footer-logo-name">Dr. Dr. Hausmann</span>
@@ -2180,6 +2256,29 @@
       document.documentElement.setAttribute('lang', lang);
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      // Update select options text
+      document.querySelectorAll('#input-area option').forEach(opt => {
+        const text = opt.getAttribute('data-' + lang);
+        if (text) opt.textContent = text;
+      });
+    }
+
+    // Form submit handler
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+        // Show success message (replace with Formspree fetch when ready)
+        setTimeout(() => {
+          document.getElementById('form-success').style.display = 'block';
+          contactForm.reset();
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        }, 600);
+      });
     }
 
     // Smooth scroll
