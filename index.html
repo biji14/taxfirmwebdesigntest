@@ -1257,12 +1257,17 @@
       .footer-top        { grid-template-columns: 1fr 1fr; }
       .trust-strip-inner { grid-template-columns: 1fr 1fr; }
       .nav-links         { display: none; }
+      .nav-datev-badge   { display: none !important; }
     }
 
     @media (max-width: 640px) {
       /* Nav */
-      .nav-inner         { padding: 0 16px; height: 60px; gap: 10px; }
+      .nav-inner         { padding: 0 16px; height: 64px; gap: 8px; }
       .logo-sub          { display: none !important; }
+      .logo-name         { font-size: 14px; white-space: nowrap; }
+      .logo-mark         { width: 36px; height: 36px; font-size: 13px; border-radius: 6px; }
+      .logo-divider      { display: none; }
+      .nav-datev-badge   { display: none !important; }
       .btn-nav           { display: none; }
 
       /* Hero */
@@ -1622,7 +1627,7 @@
       </ul>
 
       <div class="nav-right">
-        <a href="#datev" style="display:flex;align-items:center;background:#fff;border-radius:7px;padding:5px 14px;border:1px solid var(--border-l-s);box-shadow:0 1px 6px rgba(13,30,59,0.08);text-decoration:none;transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease;" onmouseover="this.style.borderColor='rgba(198,153,58,0.5)';this.style.boxShadow='0 3px 14px rgba(13,30,59,0.12)';this.style.transform='translateY(-1px)'" onmouseout="this.style.borderColor='rgba(13,30,59,0.15)';this.style.boxShadow='0 1px 6px rgba(13,30,59,0.08)';this.style.transform='translateY(0)'">
+        <a href="#datev" class="nav-datev-badge" style="display:flex;align-items:center;background:#f0f2f5;border-radius:7px;padding:5px 14px;border:1px solid var(--border-l-s);box-shadow:0 1px 6px rgba(13,30,59,0.08);text-decoration:none;transition:border-color 0.2s ease,box-shadow 0.2s ease,transform 0.2s ease;" onmouseover="this.style.borderColor='rgba(198,153,58,0.5)';this.style.boxShadow='0 3px 14px rgba(13,30,59,0.12)';this.style.transform='translateY(-1px)'" onmouseout="this.style.borderColor='rgba(13,30,59,0.15)';this.style.boxShadow='0 1px 6px rgba(13,30,59,0.08)';this.style.transform='translateY(0)'">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Datev.svg/1280px-Datev.svg.png" alt="DATEV" style="height:28px;width:auto;display:block;" />
         </a>
         <div class="lang-switcher">
@@ -2205,7 +2210,7 @@
             </div>
           </a>
           <p class="en">A Berlin-based law and tax firm specialising in tax law, criminal tax law, tax advisory, and business tax planning. Advising and representing business clients with high standards of expertise and client service.</p>
-          <p class="de">Eine Berliner Rechtsanwalts- und Steuerkanzlei mit Schwerpunkt Steuerberatung, Steuerrecht, Steuerstrafrecht und Steuergestaltung. Beratung und Vertretung von Unternehmen mit höchsten Ansprüchen.</p>
+          <p class="de">Eine Berliner Rechtsanwalts und Steuerkanzlei mit Schwerpunkt Steuerberatung, Steuerrecht, Steuerstrafrecht und Steuergestaltung. Beratung und Vertretung von Unternehmen mit höchsten Ansprüchen.</p>
           <div class="footer-contact-mini">
             <a href="tel:+493085994000">030 / 85 99 40-0</a>
             <a href="mailto:info@kanzlei-hausmann.berlin">info@kanzlei-hausmann.berlin</a>
