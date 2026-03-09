@@ -395,7 +395,15 @@
       line-height: 1.08;
     }
 
-    .hero-heading em { font-style: italic; color: var(--gold-pale); }
+    .hero-heading em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--gold-pale) 0%, #fff8d6 38%, var(--gold-light) 50%, #fff8d6 62%, var(--gold-pale) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: em-shimmer 5s linear 1.2s infinite;
+    }
 
     .hero-sub {
       color: var(--text-light-m);
@@ -1962,6 +1970,89 @@
       .bio-content-col { padding: 48px 24px; }
       .bio-timeline { padding-left: 22px; }
     }
+
+    /* ══ Hero effects ═══════════════════════════════ */
+
+    /* Gold shimmer sweep on em */
+    @keyframes em-shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+
+    /* Desktop hero text entrance */
+    @keyframes hero-enter-up {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @media (min-width: 641px) {
+      .hero-left > * {
+        animation: hero-enter-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      .hero-left .eyebrow        { animation-delay: 0.08s; }
+      .hero-left .hero-heading   { animation-delay: 0.24s; }
+      .hero-left .hero-sub       { animation-delay: 0.42s; }
+      .hero-left .hero-actions   { animation-delay: 0.58s; }
+      .hero-left .hero-mobile-stats { animation: none; }
+    }
+
+    /* Ambient orbs */
+    @keyframes orb-drift-1 {
+      0%, 100% { transform: translate(0,    0)    scale(1); }
+      33%      { transform: translate(-55px, 45px) scale(1.1); }
+      66%      { transform: translate(40px, -35px) scale(0.93); }
+    }
+    @keyframes orb-drift-2 {
+      0%, 100% { transform: translate(0,    0)    scale(1); }
+      50%      { transform: translate(50px, -65px) scale(1.12); }
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(90px);
+    }
+    .hero-orb-1 {
+      width: 650px; height: 520px;
+      background: radial-gradient(circle, rgba(198,153,58,0.17) 0%, transparent 70%);
+      top: -140px; right: 3%;
+      animation: orb-drift-1 22s ease-in-out infinite;
+    }
+    .hero-orb-2 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(21,45,86,0.75) 0%, transparent 70%);
+      bottom: -80px; left: -40px;
+      animation: orb-drift-2 28s ease-in-out infinite;
+    }
+
+    /* Floating particles */
+    @keyframes particle-rise {
+      0%   { opacity: 0;   transform: translateY(0)     scale(0.5); }
+      15%  { opacity: 0.7; }
+      85%  { opacity: 0.35; }
+      100% { opacity: 0;   transform: translateY(-110px) scale(1.2); }
+    }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-particle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0;
+      animation: particle-rise linear infinite;
+    }
+
+    /* CTA pulse ring in hero */
+    @keyframes cta-pulse {
+      0%   { box-shadow: 0 4px 20px rgba(198,153,58,0.35), 0 0 0 0   rgba(198,153,58,0.45); }
+      70%  { box-shadow: 0 4px 20px rgba(198,153,58,0.35), 0 0 0 14px rgba(198,153,58,0); }
+      100% { box-shadow: 0 4px 20px rgba(198,153,58,0.35), 0 0 0 0   rgba(198,153,58,0); }
+    }
+    .hero .btn-primary { animation: cta-pulse 2.8s ease-out 1.8s infinite; }
+    .hero .btn-primary:hover { animation: none; }
   </style>
 </head>
 <body>
@@ -2051,10 +2142,29 @@
   <section class="hero" id="hero">
 
     <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+
+    <!-- Floating particles -->
+    <div class="hero-particles">
+      <span class="hero-particle" style="left:7%;bottom:22%;width:3px;height:3px;animation-duration:9s;animation-delay:0s;"></span>
+      <span class="hero-particle" style="left:21%;bottom:12%;width:2px;height:2px;animation-duration:12s;animation-delay:2.5s;"></span>
+      <span class="hero-particle" style="left:37%;bottom:28%;width:4px;height:4px;animation-duration:10s;animation-delay:1.2s;"></span>
+      <span class="hero-particle" style="left:51%;bottom:16%;width:2px;height:2px;animation-duration:14s;animation-delay:3.5s;"></span>
+      <span class="hero-particle" style="left:64%;bottom:32%;width:3px;height:3px;animation-duration:11s;animation-delay:0.8s;"></span>
+      <span class="hero-particle" style="left:77%;bottom:20%;width:2px;height:2px;animation-duration:13s;animation-delay:4.5s;"></span>
+      <span class="hero-particle" style="left:14%;bottom:42%;width:2px;height:2px;animation-duration:16s;animation-delay:6s;"></span>
+      <span class="hero-particle" style="left:88%;bottom:36%;width:3px;height:3px;animation-duration:11s;animation-delay:2s;"></span>
+    </div>
 
     <div class="hero-inner">
       <!-- Left: headline -->
-      <div>
+      <div class="hero-left">
+
+        <div class="eyebrow">
+          <span class="en">Berlin Tax Law Firm</span>
+          <span class="de">Berliner Steuerkanzlei</span>
+        </div>
 
         <h1 class="hero-heading">
           <span class="en">Expert Tax Law<br>&amp; <em>Legal Counsel</em><br>in Berlin</span>
@@ -2786,6 +2896,31 @@
         }
       }, { passive: true });
     }
+
+    // ── 3D Card Tilt ───────────────────────────────
+    (function() {
+      const heroRight = document.querySelector('.hero-right');
+      const heroCard  = document.querySelector('.hero-card');
+      if (!heroRight || !heroCard) return;
+
+      heroCard.addEventListener('mouseenter', () => {
+        heroRight.style.animation  = 'none';
+        heroRight.style.opacity    = '1';
+        heroRight.style.transition = 'transform 0.12s ease';
+      });
+
+      heroCard.addEventListener('mousemove', e => {
+        const r = heroCard.getBoundingClientRect();
+        const x = (e.clientX - r.left)  / r.width  - 0.5;
+        const y = (e.clientY - r.top)   / r.height - 0.5;
+        heroRight.style.transform = `perspective(900px) rotateY(${x * 13}deg) rotateX(${-y * 9}deg)`;
+      });
+
+      heroCard.addEventListener('mouseleave', () => {
+        heroRight.style.transition = 'transform 0.7s cubic-bezier(0.34,1.56,0.64,1)';
+        heroRight.style.transform  = 'perspective(900px) rotateY(0deg) rotateX(0deg)';
+      });
+    })();
 
     // ── CTA Band Parallax ──────────────────────────
     const ctaBand = document.querySelector('.cta-band-bg img');
