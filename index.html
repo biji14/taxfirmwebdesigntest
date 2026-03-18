@@ -6,7 +6,7 @@
   <title>Kanzlei Dr. Dr. Hausmann — Steuerberatung & Steuerrecht Berlin | Fachanwalt</title>
 
   <!-- ── SEO Meta ───────────────────────────────────── -->
-  <meta name="description" content="Kanzlei Dr. Dr. Hausmann — Steuerberatung & Steuerrecht in Berlin. Fachanwalt für Steuerrecht, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung. Jetzt Beratung anfragen." />
+  <meta name="description" content="Kanzlei Dr. Dr. Hotausmann — Steuerberatung & Steuerrecht in Berlin. Fachanwalt für Steuerrecht, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung. Jetzt Beratung anfragen." />
   <meta name="keywords" content="Steuerberatung Berlin, Fachanwalt Steuerrecht Berlin, Steuerstrafrecht Berlin, Steuergestaltung Unternehmen, Rechtsanwalt Steuerrecht Berlin, Dr. Hausmann Steuerberatung" />
   <meta name="author" content="Dr. Dr. Hans-Christian Hausmann" />
   <meta name="robots" content="index, follow" />
@@ -2497,6 +2497,9 @@
             <span class="de">Beratungsgespräch anfragen</span>
           </h3>
           <form id="contact-form" novalidate>
+            <input type="hidden" name="access_key" value="781019a8-32b5-4efd-8f26-4cb6ce4fdbae" />
+            <input type="hidden" name="subject" value="New Consultation Request — Kanzlei Hausmann" />
+            <input type="hidden" name="from_name" value="Kanzlei Hausmann Website" />
             <div class="form-row" style="margin-bottom:0;">
               <div class="form-group">
                 <label class="form-label en" for="input-firstname">First Name</label>
@@ -2513,6 +2516,11 @@
               <label class="form-label en" for="input-email">E-Mail</label>
               <label class="form-label de" for="input-email">E-Mail</label>
               <input type="email" id="input-email" name="email" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label en" for="input-phone">Phone Number</label>
+              <label class="form-label de" for="input-phone">Telefonnummer</label>
+              <input type="tel" id="input-phone" name="phone" class="form-input" placeholder="+49 30 000000" />
             </div>
             <div class="form-group">
               <label class="form-label en" for="input-area">Practice Area</label>
@@ -2538,13 +2546,17 @@
               <p class="en" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Your message has been sent. We will be in touch shortly.</p>
               <p class="de" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.</p>
             </div>
+            <div id="form-error" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(200,50,50,0.07);border:1px solid rgba(200,50,50,0.25);border-radius:8px;text-align:center;">
+              <p class="en" style="color:#c03030;font-size:14px;font-weight:500;margin:0;">✗ Something went wrong. Please try again or email us directly.</p>
+              <p class="de" style="color:#c03030;font-size:14px;font-weight:500;margin:0;">✗ Etwas ist schiefgelaufen. Bitte versuche es erneut.</p>
+            </div>
           </form>
           <p class="form-note en">All information is treated with strict confidentiality in accordance with German data protection law (DSGVO / GDPR).</p>
           <p class="form-note de">Alle Angaben werden streng vertraulich gemäß dem deutschen Datenschutzrecht (DSGVO) behandelt.</p>
         </div>
         <div class="contact-map-card">
           <iframe
-            src="https://maps.google.com/maps?q=Bundesallee+91%2C+12161+Berlin&output=embed&z=15"
+            src="https://maps.google.com/maps?q=52.467475,13.3279068&z=19&output=embed"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -2552,7 +2564,7 @@
           </iframe>
           <div class="contact-map-footer">
             <p class="contact-map-address">Bundesallee 91, 12161 Berlin</p>
-            <a href="https://maps.google.com/maps?q=Bundesallee+91,+12161+Berlin" target="_blank" rel="noopener" class="contact-map-btn">
+            <a href="https://www.google.com/maps/place/Dr.+Dr.+Hans-Christian+Hausmann/@52.467475,13.3272631,19z/data=!3m1!5s0x47a85078deb7835d:0x1fb2906a7d461a2f!4m6!3m5!1s0x47a8466e11aeba65:0x825f8a19698116b2!8m2!3d52.467475!4d13.3279068!16s%2Fg%2F11g1f8w6mm" target="_blank" rel="noopener" class="contact-map-btn">
               <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
               <span class="en">Get Directions</span>
               <span class="de">Route planen</span>
@@ -2700,21 +2712,40 @@
       });
     }
 
-    // Form submit handler
+    // Form submit handler — powered by Web3Forms
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
+      contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = contactForm.querySelector('button[type="submit"]');
+        const successEl = document.getElementById('form-success');
+        const errorEl  = document.getElementById('form-error');
+        successEl.style.display = 'none';
+        errorEl.style.display   = 'none';
         btn.disabled = true;
         btn.style.opacity = '0.7';
-        // Show success message (replace with Formspree fetch when ready)
-        setTimeout(() => {
-          document.getElementById('form-success').style.display = 'block';
-          contactForm.reset();
+
+        const data = new FormData(contactForm);
+
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          const json = await res.json();
+          if (json.success) {
+            successEl.style.display = 'block';
+            contactForm.reset();
+          } else {
+            errorEl.style.display = 'block';
+          }
+        } catch (_) {
+          errorEl.style.display = 'block';
+        } finally {
           btn.disabled = false;
           btn.style.opacity = '1';
-        }, 600);
+        }
       });
     }
 
