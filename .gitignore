@@ -3,6 +3,7 @@ temporary screenshots/
 .claude/
 memory/
 *.png
+!datev-logo.png
 !brand/**/*.png
 !brand/**/*.jpg
 !brand/**/*.jpeg
