@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kanzlei Dr. Dr. Hausmann — Steuerberatung & Steuerrecht Berlin | Fachanwalt</title>
+  <title>Kanzlei Dr. Dr. Hausmann: Steuerberatung & Steuerrecht Berlin | Fachanwalt</title>
 
   <!-- ── SEO Meta ───────────────────────────────────── -->
-  <meta name="description" content="Kanzlei Dr. Dr. Hotausmann — Steuerberatung & Steuerrecht in Berlin. Fachanwalt für Steuerrecht, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung. Jetzt Beratung anfragen." />
+  <meta name="description" content="Kanzlei Dr. Dr. Hotausmann: Steuerberatung & Steuerrecht in Berlin. Fachanwalt für Steuerrecht, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung. Jetzt Beratung anfragen." />
   <meta name="keywords" content="Steuerberatung Berlin, Fachanwalt Steuerrecht Berlin, Steuerstrafrecht Berlin, Steuergestaltung Unternehmen, Rechtsanwalt Steuerrecht Berlin, Dr. Hausmann Steuerberatung" />
   <meta name="author" content="Dr. Dr. Hans-Christian Hausmann" />
   <meta name="robots" content="index, follow" />
@@ -15,7 +15,7 @@
   <!-- ── Open Graph (Social Media) ─────────────────── -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kanzlei-hausmann.berlin/" />
-  <meta property="og:title" content="Kanzlei Dr. Dr. Hausmann — Steuerberatung & Steuerrecht Berlin" />
+  <meta property="og:title" content="Kanzlei Dr. Dr. Hausmann: Steuerberatung & Steuerrecht Berlin" />
   <meta property="og:description" content="Steuerberatung & Steuerrecht in Berlin. Fachanwalt für Steuerrecht, Steuerstrafrecht und Steuergestaltung für Unternehmen. Über 30 Jahre Erfahrung." />
   <meta property="og:image" content="https://kanzlei-hausmann.berlin/brand/Kanzlei hausmann profile.png" />
   <meta property="og:locale" content="de_DE" />
@@ -24,7 +24,7 @@
 
   <!-- ── Twitter Card ───────────────────────────────── -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kanzlei Dr. Dr. Hausmann — Steuerberatung & Steuerrecht Berlin" />
+  <meta name="twitter:title" content="Kanzlei Dr. Dr. Hausmann: Steuerberatung & Steuerrecht Berlin" />
   <meta name="twitter:description" content="Steuerberatung & Steuerrecht in Berlin. Fachanwalt für Steuerrecht, Steuerstrafrecht und Steuergestaltung für Unternehmen." />
   <meta name="twitter:image" content="https://kanzlei-hausmann.berlin/brand/Kanzlei hausmann profile.png" />
 
@@ -134,12 +134,18 @@
     }
 
     /* Language visibility */
-    html[data-lang="en"] .de { display: none !important; }
-    html[data-lang="en"] .ru { display: none !important; }
-    html[data-lang="de"] .en { display: none !important; }
-    html[data-lang="de"] .ru { display: none !important; }
-    html[data-lang="ru"] .de { display: none !important; }
-    html[data-lang="ru"] .en { display: none !important; }
+    html[data-lang="en"] .de,
+    html[data-lang="en"] .ru,
+    html[data-lang="en"] .fr { display: none !important; }
+    html[data-lang="de"] .en,
+    html[data-lang="de"] .ru,
+    html[data-lang="de"] .fr { display: none !important; }
+    html[data-lang="ru"] .de,
+    html[data-lang="ru"] .en,
+    html[data-lang="ru"] .fr { display: none !important; }
+    html[data-lang="fr"] .de,
+    html[data-lang="fr"] .en,
+    html[data-lang="fr"] .ru { display: none !important; }
 
     /* ── Navigation ──────────────────────────────── */
     nav {
@@ -245,6 +251,7 @@
     }
     .fi-de { background-image: linear-gradient(to bottom, #000 0%, #000 33.4%, #dd0000 33.4%, #dd0000 66.7%, #ffce00 66.7%, #ffce00 100%); }
     .fi-ru { background-image: linear-gradient(to bottom, #fff 0%, #fff 33.4%, #0039a6 33.4%, #0039a6 66.7%, #d52b1e 66.7%, #d52b1e 100%); }
+    .fi-fr { background-image: linear-gradient(to right, #002395 0%, #002395 33.4%, #fff 33.4%, #fff 66.7%, #ed2939 66.7%, #ed2939 100%); }
     .fi-gb { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='a'%3E%3Cpath d='M0 0v30h60V0z'/%3E%3C/clipPath%3E%3Cpath d='M0 0v30h60V0z' fill='%23012169'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 30m0-30L0 30' clip-path='url(%23a)' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30 0v30M0 15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E"); }
 
     .lang-switcher {
@@ -1556,14 +1563,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
     }
     .mobile-menu-datev {
       display: flex;
       align-items: center;
       background: #f0f2f5;
       border-radius: 6px;
-      padding: 6px 14px;
+      padding: 6px 10px;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .mobile-menu-datev img { height: 22px; width: auto; display: block; }
     .mobile-lang-switcher {
@@ -1578,17 +1588,17 @@
       background: transparent;
       border: none;
       color: rgba(236,231,216,0.5);
-      font-size: 11.5px;
+      font-size: 10.5px;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
-      letter-spacing: 0.08em;
-      padding: 6px 16px;
+      letter-spacing: 0.06em;
+      padding: 6px 9px;
       border-radius: 3px;
       cursor: pointer;
       transition: background 0.18s ease, color 0.18s ease;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
     .mobile-lang-btn.active { background: var(--gold); color: #fff; }
 
@@ -1652,7 +1662,7 @@
       .hamburger span { width: 18px; }
 
       /* ════════════════════════════════════════════
-         HERO — entrance animation sequence
+         HERO: entrance animation sequence
       ════════════════════════════════════════════ */
       .hero           { padding: 52px 20px 56px; min-height: auto; }
       .hero .hero-heading {
@@ -1748,7 +1758,7 @@
       .trust-desc   { font-size: 11.5px; margin-top: 2px; }
 
       /* ════════════════════════════════════════════
-         SECTIONS — spacing
+         SECTIONS: spacing
       ════════════════════════════════════════════ */
       .services-section { padding: 52px 20px; }
       .attorney-section { padding: 0 0 52px; }
@@ -2172,16 +2182,17 @@
       </a>
 
       <ul class="nav-links">
-        <li><a href="#services"><span class="en">Practice Areas</span><span class="de">Leistungen</span><span class="ru">Практика</span></a></li>
-        <li><a href="#attorney"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span><span class="ru">Адвокат</span></a></li>
-        <li><a href="#mandanten"><span class="en">Clients</span><span class="de">Mandanten</span><span class="ru">Клиенты</span></a></li>
-        <li><a href="#contact"><span class="en">Contact</span><span class="de">Kontakt</span><span class="ru">Контакт</span></a></li>
+        <li><a href="#services"><span class="en">Practice Areas</span><span class="de">Leistungen</span><span class="fr">Domaines</span><span class="ru">Практика</span></a></li>
+        <li><a href="#attorney"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span><span class="fr">Avocat</span><span class="ru">Адвокат</span></a></li>
+        <li><a href="#mandanten"><span class="en">Clients</span><span class="de">Mandanten</span><span class="fr">Clients</span><span class="ru">Клиенты</span></a></li>
+        <li><a href="#contact"><span class="en">Contact</span><span class="de">Kontakt</span><span class="fr">Contact</span><span class="ru">Контакт</span></a></li>
         <li><a href="#datev">DATEV</a></li>
       </ul>
 
       <div class="mob-lang-header">
         <button id="mob-hdr-de" class="mob-hdr-lang active" onclick="setLang('de')"><span class="fi fi-de"></span></button>
         <button id="mob-hdr-en" class="mob-hdr-lang" onclick="setLang('en')"><span class="fi fi-gb"></span></button>
+        <button id="mob-hdr-fr" class="mob-hdr-lang" onclick="setLang('fr')"><span class="fi fi-fr"></span></button>
         <button id="mob-hdr-ru" class="mob-hdr-lang" onclick="setLang('ru')"><span class="fi fi-ru"></span></button>
       </div>
 
@@ -2193,11 +2204,13 @@
 <div class="lang-switcher">
           <button class="lang-btn active" id="btn-de" onclick="setLang('de')"><span class="fi fi-de"></span> DE</button>
           <button class="lang-btn" id="btn-en" onclick="setLang('en')"><span class="fi fi-gb"></span> EN</button>
+          <button class="lang-btn" id="btn-fr" onclick="setLang('fr')"><span class="fi fi-fr"></span> FR</button>
           <button class="lang-btn" id="btn-ru" onclick="setLang('ru')"><span class="fi fi-ru"></span> RU</button>
         </div>
         <a href="#contact" class="btn-nav">
           <span class="en">Request Consultation</span>
           <span class="de">Beratung anfragen</span>
+          <span class="fr">Demander conseil</span>
           <span class="ru">Записаться</span>
         </a>
       </div>
@@ -2208,15 +2221,15 @@
   <div class="mobile-menu" id="mobile-menu">
     <div class="mobile-menu-links">
       <a href="#services" onclick="closeMobileMenu()">
-        <span class="en">Practice Areas</span><span class="de">Leistungen</span><span class="ru">Практика</span>
+        <span class="en">Practice Areas</span><span class="de">Leistungen</span><span class="fr">Domaines</span><span class="ru">Практика</span>
         <span class="menu-arrow">→</span>
       </a>
       <a href="#attorney" onclick="closeMobileMenu()">
-        <span class="en">Attorney</span><span class="de">Rechtsanwalt</span><span class="ru">Адвокат</span>
+        <span class="en">Attorney</span><span class="de">Rechtsanwalt</span><span class="fr">Avocat</span><span class="ru">Адвокат</span>
         <span class="menu-arrow">→</span>
       </a>
       <a href="#mandanten" onclick="closeMobileMenu()">
-        <span class="en">Clients</span><span class="de">Mandanten</span><span class="ru">Клиенты</span>
+        <span class="en">Clients</span><span class="de">Mandanten</span><span class="fr">Clients</span><span class="ru">Клиенты</span>
         <span class="menu-arrow">→</span>
       </a>
       <a href="#datev" onclick="closeMobileMenu()">
@@ -2224,7 +2237,7 @@
         <span class="menu-arrow">→</span>
       </a>
       <a href="#contact" onclick="closeMobileMenu()">
-        <span class="en">Contact</span><span class="de">Kontakt</span><span class="ru">Контакт</span>
+        <span class="en">Contact</span><span class="de">Kontakt</span><span class="fr">Contact</span><span class="ru">Контакт</span>
         <span class="menu-arrow">→</span>
       </a>
     </div>
@@ -2232,6 +2245,7 @@
       <a href="#contact" class="mobile-menu-cta" onclick="closeMobileMenu()">
         <span class="en">Request Consultation</span>
         <span class="de">Beratung anfragen</span>
+        <span class="fr">Demander conseil</span>
         <span class="ru">Записаться</span>
       </a>
       <div class="mobile-menu-footer">
@@ -2241,6 +2255,7 @@
         <div class="mobile-lang-switcher">
           <button class="mobile-lang-btn active" id="mobile-btn-de" onclick="setLang('de')"><span class="fi fi-de"></span> DE</button>
           <button class="mobile-lang-btn" id="mobile-btn-en" onclick="setLang('en')"><span class="fi fi-gb"></span> EN</button>
+          <button class="mobile-lang-btn" id="mobile-btn-fr" onclick="setLang('fr')"><span class="fi fi-fr"></span> FR</button>
           <button class="mobile-lang-btn" id="mobile-btn-ru" onclick="setLang('ru')"><span class="fi fi-ru"></span> RU</button>
         </div>
       </div>
@@ -2259,24 +2274,28 @@
         <h1 class="hero-heading hero-anim-heading">
           <span class="en">Expert Tax Law<br>&amp; <em>Legal Counsel</em><br>in Berlin</span>
           <span class="de">Steuerberatung &amp;<br><em>Steuerrecht</em><br>in Berlin</span>
+          <span class="fr">Droit Fiscal<br>&amp; <em>Conseil Juridique</em><br>à Berlin</span>
           <span class="ru">Налоговое право<br>&amp; <em>Юридическое</em><br>консультирование в Берлине</span>
         </h1>
 
         <p class="hero-sub hero-anim-sub">
           <span class="en">Kanzlei Dr. Dr. Hausmann is a long-established Berlin law and tax firm specialising in tax consulting. We specialise in corporate tax law. Our firm represents businesses and entrepreneurs in their tax and legal matters.</span>
           <span class="de">Die Kanzlei Dr. Dr. Hausmann ist eine über viele Jahre gewachsene Berliner Rechtsanwalts- und Steuerkanzlei mit dem Schwerpunkt Steuerberatung. Wir sind auf das Unternehmenssteuerrecht spezialisiert. Unsere Kanzlei vertritt Unternehmen und Unternehmer in ihren steuerlichen und rechtlichen Angelegenheiten.</span>
-          <span class="ru">Kanzlei Dr. Dr. Hausmann — это берлинская юридическая и налоговая фирма с многолетним опытом, специализирующаяся на налоговом консультировании. Мы специализируемся на корпоративном налоговом праве. Наша фирма представляет интересы компаний и предпринимателей в налоговых и правовых вопросах.</span>
+          <span class="fr">Le cabinet Dr. Dr. Hausmann est un cabinet d'avocats fiscalistes berlinois de longue date, spécialisé dans le conseil fiscal. Nous sommes spécialisés en droit fiscal des entreprises. Notre cabinet représente les entreprises et les entrepreneurs dans leurs affaires fiscales et juridiques.</span>
+          <span class="ru">Kanzlei Dr. Dr. Hausmann является берлинской юридической и налоговой фирмой с многолетним опытом, специализирующейся на налоговом консультировании. Мы специализируемся на корпоративном налоговом праве. Наша фирма представляет интересы компаний и предпринимателей в налоговых и правовых вопросах.</span>
         </p>
 
         <div class="hero-actions hero-anim-actions">
           <a href="#contact" class="btn-primary">
             <span class="en">Arrange a Consultation</span>
             <span class="de">Beratungsgespräch anfragen</span>
+            <span class="fr">Demander une consultation</span>
             <span class="ru">Записаться на консультацию</span>
           </a>
           <a href="#services" class="btn-ghost-light">
             <span class="en">Practice Areas</span>
             <span class="de">Leistungen</span>
+            <span class="fr">Domaines d'activité</span>
             <span class="ru">Области практики</span>
           </a>
         </div>
@@ -2293,6 +2312,7 @@
               <span class="hero-portrait-label-name">Dr. Dr. Hans-Christian Hausmann</span>
               <span class="hero-portrait-label-title en">Attorney · Tax Law Specialist</span>
               <span class="hero-portrait-label-title de">Rechtsanwalt · Fachanwalt für Steuerrecht</span>
+              <span class="hero-portrait-label-title fr">Avocat · Spécialiste en droit fiscal</span>
               <span class="hero-portrait-label-title ru">Адвокат · Специалист по налоговому праву</span>
             </div>
           </div>
@@ -2311,9 +2331,11 @@
         <div>
           <p class="trust-title en">Tax Law Specialist</p>
           <p class="trust-title de">Fachanwalt für Steuerrecht</p>
+          <p class="trust-title fr">Spécialiste en droit fiscal</p>
           <p class="trust-title ru">Специалист по налоговому праву</p>
           <p class="trust-desc en">Corporate &amp; individual tax law</p>
           <p class="trust-desc de">für Unternehmen und natürliche Personen</p>
+          <p class="trust-desc fr">Droit fiscal des entreprises et des particuliers</p>
           <p class="trust-desc ru">Налоговое право для бизнеса и физических лиц</p>
         </div>
       </div>
@@ -2324,9 +2346,11 @@
         <div>
           <p class="trust-title en">GDPR Compliant</p>
           <p class="trust-title de">DSGVO-konform</p>
+          <p class="trust-title fr">Conforme au RGPD</p>
           <p class="trust-title ru">Соответствие GDPR</p>
           <p class="trust-desc en">Full data protection under German law</p>
           <p class="trust-desc de">Vollständiger Datenschutz nach dt. Recht</p>
+          <p class="trust-desc fr">Protection intégrale des données selon le droit allemand</p>
           <p class="trust-desc ru">Полная защита данных по немецкому праву</p>
         </div>
       </div>
@@ -2337,9 +2361,11 @@
         <div>
           <p class="trust-title en">Berlin-Based</p>
           <p class="trust-title de">Berliner Kanzlei</p>
+          <p class="trust-title fr">Cabinet berlinois</p>
           <p class="trust-title ru">Офис в Берлине</p>
           <p class="trust-desc en">Serving clients across Germany</p>
           <p class="trust-desc de">Mandanten in ganz Deutschland</p>
+          <p class="trust-desc fr">Au service de clients dans toute l'Allemagne</p>
           <p class="trust-desc ru">Клиенты по всей Германии</p>
         </div>
       </div>
@@ -2350,9 +2376,11 @@
         <div>
           <p class="trust-title en">Transparent Fees</p>
           <p class="trust-title de">Transparente Kosten</p>
+          <p class="trust-title fr">Honoraires transparents</p>
           <p class="trust-title ru">Прозрачные гонорары</p>
           <p class="trust-desc en">Clear structures, no surprises</p>
           <p class="trust-desc de">Klare Strukturen, keine Überraschungen</p>
+          <p class="trust-desc fr">Structures claires, sans surprise</p>
           <p class="trust-desc ru">Понятные условия, без сюрпризов</p>
         </div>
       </div>
@@ -2366,18 +2394,21 @@
         <div>
           <span class="section-label en">Practice Areas</span>
           <span class="section-label de">Leistungen im Steuerrecht</span>
+          <span class="section-label fr">Domaines d'activité</span>
           <span class="section-label ru">Области практики</span>
           <h2 class="services-heading">
             <span class="en">Three focused areas<br>of specialist expertise</span>
             <span class="de">Drei Schwerpunkte<br>unserer Fachkompetenz</span>
+            <span class="fr">Trois domaines<br>de compétence spécialisée</span>
             <span class="ru">Три ключевых направления<br>специализированной экспертизы</span>
           </h2>
           <div class="gold-rule"></div>
         </div>
         <p class="services-sub">
-          <span class="en">We deliver individual, creative, and commercial solutions — with genuine commitment to your interests and success.</span>
-          <span class="de">Wir liefern individuelle, kreative und wirtschaftliche Lösungen — verbunden mit echtem Engagement für Ihre Interessen und Ihren Erfolg.</span>
-          <span class="ru">Мы предлагаем индивидуальные, творческие и практически ориентированные решения — с подлинной приверженностью вашим интересам и успеху.</span>
+          <span class="en">We deliver individual, creative, and commercial solutions, with genuine commitment to your interests and success.</span>
+          <span class="de">Wir liefern individuelle, kreative und wirtschaftliche Lösungen, verbunden mit echtem Engagement für Ihre Interessen und Ihren Erfolg.</span>
+          <span class="fr">Nous proposons des solutions individuelles, créatives et économiques, avec un engagement sincère envers vos intérêts et votre réussite.</span>
+          <span class="ru">Мы предлагаем индивидуальные, творческие и практически ориентированные решения, с подлинной приверженностью вашим интересам и успеху.</span>
         </p>
       </div>
 
@@ -2390,19 +2421,22 @@
           </div>
           <span class="service-number en">01 / Tax Advisory</span>
           <span class="service-number de">01 / Steuerberatung</span>
+          <span class="service-number fr">01 / Conseil fiscal</span>
           <span class="service-number ru">01 / Налоговое консультирование</span>
           <h3 class="service-title en">Tax Advisory &amp; Consulting</h3>
           <h3 class="service-title de">Steuerberatung</h3>
+          <h3 class="service-title fr">Conseil fiscal</h3>
           <h3 class="service-title ru">Налоговое консультирование</h3>
           <p class="service-desc en">Reliable, ongoing tax advisory for businesses.</p>
           <p class="service-desc de">Verlässliche, laufende Steuerberatung für Unternehmen.</p>
+          <p class="service-desc fr">Conseil fiscal fiable et continu pour les entreprises.</p>
           <p class="service-desc ru">Надёжное постоянное налоговое консультирование для бизнеса.</p>
           <ul class="service-bullets">
-            <li><span class="en">Annual financial statements (Jahresabschlüsse)</span><span class="de">Jahresabschlüsse &amp; Bilanzen</span><span class="ru">Годовые финансовые отчёты (Jahresabschlüsse)</span></li>
-            <li><span class="en">Business tax returns &amp; declarations</span><span class="de">Betriebliche Steuererklärungen</span><span class="ru">Налоговые декларации для бизнеса</span></li>
-            <li><span class="en">Private tax returns &amp; inheritance tax returns</span><span class="de">Private Steuererklärungen, Erbschaftsteuererklärungen</span><span class="ru">Налоговые декларации физических лиц и по налогу на наследство</span></li>
-            <li><span class="en">Bookkeeping (Finanzbuchhaltung)</span><span class="de">Finanzbuchhaltung</span><span class="ru">Бухгалтерский учёт (Finanzbuchhaltung)</span></li>
-            <li><span class="en">Payroll &amp; salary accounting (incl. construction wages)</span><span class="de">Lohn- und Gehaltsabrechnungen (auch Baulöhne)</span><span class="ru">Расчёт заработной платы (включая строительные работы)</span></li>
+            <li><span class="en">Annual financial statements (Jahresabschlüsse)</span><span class="de">Jahresabschlüsse &amp; Bilanzen</span><span class="fr">Comptes annuels (Jahresabschlüsse)</span><span class="ru">Годовые финансовые отчёты (Jahresabschlüsse)</span></li>
+            <li><span class="en">Business tax returns &amp; declarations</span><span class="de">Betriebliche Steuererklärungen</span><span class="fr">Déclarations fiscales des entreprises</span><span class="ru">Налоговые декларации для бизнеса</span></li>
+            <li><span class="en">Private tax returns &amp; inheritance tax returns</span><span class="de">Private Steuererklärungen, Erbschaftsteuererklärungen</span><span class="fr">Déclarations fiscales privées et de succession</span><span class="ru">Налоговые декларации физических лиц и по налогу на наследство</span></li>
+            <li><span class="en">Bookkeeping (Finanzbuchhaltung)</span><span class="de">Finanzbuchhaltung</span><span class="fr">Comptabilité (Finanzbuchhaltung)</span><span class="ru">Бухгалтерский учёт (Finanzbuchhaltung)</span></li>
+            <li><span class="en">Payroll &amp; salary accounting (incl. construction wages)</span><span class="de">Lohn- und Gehaltsabrechnungen (auch Baulöhne)</span><span class="fr">Gestion de la paie (y compris salaires du bâtiment)</span><span class="ru">Расчёт заработной платы (включая строительные работы)</span></li>
           </ul>
         </div>
 
@@ -2413,18 +2447,21 @@
           </div>
           <span class="service-number en">02 / Tax Law</span>
           <span class="service-number de">02 / Steuerrecht</span>
+          <span class="service-number fr">02 / Droit fiscal</span>
           <span class="service-number ru">02 / Налоговое право</span>
           <h3 class="service-title en">Tax Law &amp; Criminal Tax Law</h3>
           <h3 class="service-title de">Steuerrecht &amp; Steuerstrafrecht</h3>
+          <h3 class="service-title fr">Droit fiscal &amp; pénal fiscal</h3>
           <h3 class="service-title ru">Налоговое право и уголовное налоговое право</h3>
-          <p class="service-desc en">Comprehensive legal representation in all tax matters — from authority proceedings to the Bundesfinanzhof.</p>
-          <p class="service-desc de">Umfassende rechtliche Vertretung in allen steuerlichen Angelegenheiten — von Behördenverfahren bis zum Bundesfinanzhof.</p>
-          <p class="service-desc ru">Комплексное юридическое представительство во всех налоговых делах — от административных производств до Bundesfinanzhof.</p>
+          <p class="service-desc en">Comprehensive legal representation in all tax matters, from authority proceedings to the Bundesfinanzhof.</p>
+          <p class="service-desc de">Umfassende rechtliche Vertretung in allen steuerlichen Angelegenheiten, von Behördenverfahren bis zum Bundesfinanzhof.</p>
+          <p class="service-desc fr">Représentation juridique complète dans toutes les affaires fiscales, des procédures administratives jusqu'au Bundesfinanzhof.</p>
+          <p class="service-desc ru">Комплексное юридическое представительство во всех налоговых делах, от административных производств до Bundesfinanzhof.</p>
           <ul class="service-bullets">
-            <li><span class="en">Tax audit representation (Betriebsprüfungen)</span><span class="de">Begleitung bei Betriebsprüfungen</span><span class="ru">Сопровождение налоговых проверок (Betriebsprüfungen)</span></li>
-            <li><span class="en">Criminal defence in tax fraud proceedings</span><span class="de">Strafverteidigung in Steuerstrafverfahren</span><span class="ru">Уголовная защита по делам о налоговых преступлениях</span></li>
-            <li><span class="en">Appeals &amp; litigation before tax courts and Bundesfinanzhof</span><span class="de">Rechtsbehelfe vor Finanzgericht &amp; BFH</span><span class="ru">Обжалование и судебное разбирательство в налоговых судах и Bundesfinanzhof</span></li>
-            <li><span class="en">Amended declarations &amp; voluntary disclosures</span><span class="de">Beratung bei Selbstanzeigen</span><span class="ru">Уточнённые декларации и добровольное раскрытие</span></li>
+            <li><span class="en">Tax audit representation (Betriebsprüfungen)</span><span class="de">Begleitung bei Betriebsprüfungen</span><span class="fr">Assistance lors des contrôles fiscaux (Betriebsprüfungen)</span><span class="ru">Сопровождение налоговых проверок (Betriebsprüfungen)</span></li>
+            <li><span class="en">Criminal defence in tax fraud proceedings</span><span class="de">Strafverteidigung in Steuerstrafverfahren</span><span class="fr">Défense pénale en matière de fraude fiscale</span><span class="ru">Уголовная защита по делам о налоговых преступлениях</span></li>
+            <li><span class="en">Appeals &amp; litigation before tax courts and Bundesfinanzhof</span><span class="de">Rechtsbehelfe vor Finanzgericht &amp; BFH</span><span class="fr">Recours devant les tribunaux fiscaux et le Bundesfinanzhof</span><span class="ru">Обжалование и судебное разбирательство в налоговых судах и Bundesfinanzhof</span></li>
+            <li><span class="en">Amended declarations &amp; voluntary disclosures</span><span class="de">Beratung bei Selbstanzeigen</span><span class="fr">Déclarations rectificatives et régularisations volontaires</span><span class="ru">Уточнённые декларации и добровольное раскрытие</span></li>
           </ul>
         </div>
 
@@ -2435,18 +2472,21 @@
           </div>
           <span class="service-number en">03 / Tax Planning</span>
           <span class="service-number de">03 / Steuergestaltung</span>
+          <span class="service-number fr">03 / Planification fiscale</span>
           <span class="service-number ru">03 / Налоговое планирование</span>
           <h3 class="service-title en">Tax Planning for Businesses</h3>
           <h3 class="service-title de">Steuergestaltung bei Unternehmen</h3>
+          <h3 class="service-title fr">Planification fiscale pour entreprises</h3>
           <h3 class="service-title ru">Налоговое планирование для бизнеса</h3>
-          <p class="service-desc en">Strategic, forward-looking tax structuring for businesses — from acquisitions and succession to holding arrangements — within every legal boundary.</p>
-          <p class="service-desc de">Strategische, vorausschauende Steuergestaltung für Unternehmen — von Akquisitionen und Nachfolge bis hin zu Holdingstrukturen.</p>
-          <p class="service-desc ru">Стратегическое, перспективное налоговое структурирование для бизнеса — от приобретений и планирования наследства до холдинговых структур.</p>
+          <p class="service-desc en">Strategic, forward-looking tax structuring for businesses, from acquisitions and succession to holding arrangements, within every legal boundary.</p>
+          <p class="service-desc de">Strategische, vorausschauende Steuergestaltung für Unternehmen, von Akquisitionen und Nachfolge bis hin zu Holdingstrukturen.</p>
+          <p class="service-desc fr">Structuration fiscale stratégique et anticipée pour les entreprises, des acquisitions à la succession, jusqu'aux structures de holding, dans le strict respect du cadre légal.</p>
+          <p class="service-desc ru">Стратегическое, перспективное налоговое структурирование для бизнеса, от приобретений и планирования наследства до холдинговых структур.</p>
           <ul class="service-bullets">
-            <li><span class="en">Company acquisitions &amp; sales</span><span class="de">Unternehmenskauf &amp; -verkauf</span><span class="ru">Купля-продажа предприятий</span></li>
-            <li><span class="en">Succession planning &amp; inheritance law</span><span class="de">Nachfolgeplanung &amp; Erbrecht</span><span class="ru">Планирование наследования и наследственное право</span></li>
-            <li><span class="en">Tax-optimal legal structure selection</span><span class="de">Steueroptimale Rechtsformwahl</span><span class="ru">Выбор оптимальной с налоговой точки зрения правовой формы</span></li>
-            <li><span class="en">Holding company structures</span><span class="de">Holdingstrukturen</span><span class="ru">Холдинговые структуры</span></li>
+            <li><span class="en">Company acquisitions &amp; sales</span><span class="de">Unternehmenskauf &amp; -verkauf</span><span class="fr">Acquisitions et cessions d'entreprises</span><span class="ru">Купля-продажа предприятий</span></li>
+            <li><span class="en">Succession planning &amp; inheritance law</span><span class="de">Nachfolgeplanung &amp; Erbrecht</span><span class="fr">Planification successorale et droit des successions</span><span class="ru">Планирование наследования и наследственное право</span></li>
+            <li><span class="en">Tax-optimal legal structure selection</span><span class="de">Steueroptimale Rechtsformwahl</span><span class="fr">Choix de structure juridique optimale sur le plan fiscal</span><span class="ru">Выбор оптимальной с налоговой точки зрения правовой формы</span></li>
+            <li><span class="en">Holding company structures</span><span class="de">Holdingstrukturen</span><span class="fr">Structures de holding</span><span class="ru">Холдинговые структуры</span></li>
           </ul>
         </div>
 
@@ -2463,17 +2503,20 @@
           <h3>Dr. Dr. Hans-Christian Hausmann</h3>
           <p class="en">Rechtsanwalt &amp; Fachanwalt für Steuerrecht</p>
           <p class="de">Rechtsanwalt &amp; Fachanwalt für Steuerrecht</p>
+          <p class="fr">Avocat et spécialiste en droit fiscal</p>
           <p class="ru">Адвокат и специалист по налоговому праву</p>
         </div>
       </div>
       <div class="attorney-text reveal-right">
         <span class="section-label en">The Attorney</span>
         <span class="section-label de">Der Rechtsanwalt</span>
+        <span class="section-label fr">L'Avocat</span>
         <span class="section-label ru">Адвокат</span>
 
         <h2 class="attorney-heading">
           <span class="en">Individual advice,<br><em>creative solutions</em></span>
           <span class="de">Individuelle Beratung,<br><em>kreative Lösungen</em></span>
+          <span class="fr">Conseil personnalisé,<br><em>solutions créatives</em></span>
           <span class="ru">Индивидуальный подход,<br><em>творческие решения</em></span>
         </h2>
 
@@ -2483,6 +2526,9 @@
         <p class="attorney-body de">
           Dr. Dr. Hans-Christian Hausmann hat die Kanzlei auf einem klaren Grundsatz gegründet, dass hervorragende steuerliche und rechtliche Beratung tiefes Fachwissen mit echtem persönlichen Engagement verbinden muss. Mit viel Erfahrung in seiner Berliner Kanzlei führt er die Mandate mit Know-how, Leidenschaft und unternehmerischem Pragmatismus.
         </p>
+        <p class="attorney-body fr">
+          Dr. Dr. Hans-Christian Hausmann a fondé ce cabinet sur un principe clair : un excellent conseil fiscal et juridique doit allier des connaissances spécialisées approfondies à un engagement personnel sincère. Fort d'une longue expérience à la tête de son cabinet berlinois, il conduit chaque dossier avec savoir-faire, passion et pragmatisme entrepreneurial.
+        </p>
         <p class="attorney-body ru">
           Др Др Ганс-Кристиан Хаусманн основал кабинет на чётком принципе: превосходная налоговая и правовая консультация должна сочетать глубокие профессиональные знания с искренней личной вовлечённостью. Обладая большим опытом работы в своей берлинской кабинете, он ведёт каждое поручение с компетентностью, страстью и предпринимательским прагматизмом.
         </p>
@@ -2490,31 +2536,38 @@
         <div class="attorney-tags">
           <span class="attorney-tag de">Steuerberatung</span>
           <span class="attorney-tag en">Tax Advisory</span>
+          <span class="attorney-tag fr">Conseil fiscal</span>
           <span class="attorney-tag ru">Налоговое консультирование</span>
           <span class="attorney-tag de">Steuerrecht</span>
           <span class="attorney-tag en">Tax Law</span>
+          <span class="attorney-tag fr">Droit fiscal</span>
           <span class="attorney-tag ru">Налоговое право</span>
           <span class="attorney-tag de">Steuerstrafrecht</span>
           <span class="attorney-tag en">Criminal Tax Law</span>
+          <span class="attorney-tag fr">Droit pénal fiscal</span>
           <span class="attorney-tag ru">Налоговое уголовное право</span>
           <span class="attorney-tag de">Steuergestaltung</span>
           <span class="attorney-tag en">Tax Planning</span>
+          <span class="attorney-tag fr">Planification fiscale</span>
           <span class="attorney-tag ru">Налоговое планирование</span>
           <span class="attorney-tag de">Rechtsanwalt &amp; Fachanwalt für Steuerrecht</span>
           <span class="attorney-tag en">Rechtsanwalt &amp; Tax Law Specialist</span>
+          <span class="attorney-tag fr">Avocat et spécialiste en droit fiscal</span>
           <span class="attorney-tag ru">Адвокат и специалист по налоговому праву</span>
         </div>
 
         <div class="attorney-quote">
-          <p class="en">"Our aim is to deliver individual, creative, and commercial solutions — with high standards of know-how, ambition, and client service."</p>
-          <p class="de">„Unser Ziel ist es, individuelle, kreative und wirtschaftliche Lösungen zu liefern — mit hohen Ansprüchen an Fachkenntnisse, Ehrgeiz und Mandantenservice."</p>
-          <p class="ru">«Наша цель — предоставлять индивидуальные, творческие и практически ориентированные решения — с высокими стандартами профессионализма, амбиций и клиентского сервиса.»</p>
-          <cite>— Dr. Dr. Hans-Christian Hausmann</cite>
+          <p class="en">"Our aim is to deliver individual, creative, and commercial solutions, with high standards of know-how, ambition, and client service."</p>
+          <p class="de">„Unser Ziel ist es, individuelle, kreative und wirtschaftliche Lösungen zu liefern, mit hohen Ansprüchen an Fachkenntnisse, Ehrgeiz und Mandantenservice."</p>
+          <p class="fr">« Notre objectif est de fournir des solutions individuelles, créatives et économiques, avec des exigences élevées en matière de savoir-faire, d'ambition et de service à la clientèle. »</p>
+          <p class="ru">«Наша цель: предоставлять индивидуальные, творческие и практически ориентированные решения, с высокими стандартами профессионализма, амбиций и клиентского сервиса.»</p>
+          <cite>Dr. Dr. Hans-Christian Hausmann</cite>
         </div>
 
         <a href="#contact" class="btn-primary">
           <span class="en">Arrange a Consultation</span>
           <span class="de">Beratungsgespräch anfragen</span>
+          <span class="fr">Demander une consultation</span>
           <span class="ru">Записаться на консультацию</span>
         </a>
       </div>
@@ -2533,6 +2586,7 @@
           <p style="font-size:9.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin:0 0 10px;opacity:0.8;">
             <span class="en">Attorney · Tax Law Specialist</span>
             <span class="de">Rechtsanwalt · Fachanwalt für Steuerrecht</span>
+            <span class="fr">Avocat · Spécialiste en droit fiscal</span>
             <span class="ru">Адвокат · Специалист по налоговому праву</span>
           </p>
           <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,28px);color:#fff;margin:0;letter-spacing:-0.02em;line-height:1.25;">Dr. Dr. Hans-Christian<br>Hausmann</h2>
@@ -2547,10 +2601,12 @@
         <div style="margin-bottom:36px;">
           <span style="font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;" class="en">Curriculum Vitae</span>
           <span style="font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;" class="de">Werdegang</span>
+          <span style="font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;" class="fr">Curriculum Vitae</span>
           <span style="font-size:9.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px;" class="ru">Биография</span>
           <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,1.8vw,24px);color:var(--text-light);margin:0;letter-spacing:-0.01em;line-height:1.3;font-weight:400;">
             <span class="en">Academic &amp; Professional Background</span>
             <span class="de">Akademischer &amp; beruflicher Werdegang</span>
+            <span class="fr">Parcours académique et professionnel</span>
             <span class="ru">Академическое и профессиональное образование</span>
           </h3>
         </div>
@@ -2561,6 +2617,7 @@
             <span class="bio-timeline-dot"></span>
             <p class="bio-timeline-label en">Law Studies · First State Examination</p>
             <p class="bio-timeline-label de">Jurastudium · Erstes Juristisches Staatsexamen</p>
+            <p class="bio-timeline-label fr">Études de droit · Premier examen d'État</p>
             <p class="bio-timeline-label ru">Изучение права · Первый государственный экзамен</p>
             <p class="bio-timeline-value">Freie Universität Berlin</p>
           </div>
@@ -2568,13 +2625,15 @@
             <span class="bio-timeline-dot"></span>
             <p class="bio-timeline-label en">Doctorate · Political Science</p>
             <p class="bio-timeline-label de">Promotion · Politikwissenschaft</p>
+            <p class="bio-timeline-label fr">Doctorat · Sciences politiques</p>
             <p class="bio-timeline-label ru">Докторантура · Политология</p>
-            <p class="bio-timeline-value">Dr. (Politikwiss.) — Freie Universität Berlin</p>
+            <p class="bio-timeline-value">Dr. (Politikwiss.), Freie Universität Berlin</p>
           </div>
           <div class="bio-timeline-item">
             <span class="bio-timeline-dot"></span>
             <p class="bio-timeline-label en">Legal Traineeship · Second State Examination</p>
             <p class="bio-timeline-label de">Referendariat · Zweites Juristisches Staatsexamen</p>
+            <p class="bio-timeline-label fr">Stage juridique · Second examen d'État</p>
             <p class="bio-timeline-label ru">Стажировка · Второй государственный экзамен</p>
             <p class="bio-timeline-value">Landgericht Münster · NRW</p>
           </div>
@@ -2582,6 +2641,7 @@
             <span class="bio-timeline-dot"></span>
             <p class="bio-timeline-label en">Master of Law (LL.M.)</p>
             <p class="bio-timeline-label de">Master of Law (LL.M.)</p>
+            <p class="bio-timeline-label fr">Master of Law (LL.M.)</p>
             <p class="bio-timeline-label ru">Магистр права (LL.M.)</p>
             <p class="bio-timeline-value">University of Glasgow · Scotland</p>
           </div>
@@ -2589,17 +2649,20 @@
             <span class="bio-timeline-dot"></span>
             <p class="bio-timeline-label en">Doctorate · Legal Science</p>
             <p class="bio-timeline-label de">Promotion · Rechtswissenschaft</p>
+            <p class="bio-timeline-label fr">Doctorat · Sciences juridiques</p>
             <p class="bio-timeline-label ru">Докторантура · Юридические науки</p>
-            <p class="bio-timeline-value">Dr. iur. — nebenberuflich</p>
+            <p class="bio-timeline-value">Dr. iur., nebenberuflich</p>
           </div>
           <div class="bio-timeline-item">
             <span class="bio-timeline-dot" style="background:var(--gold-light);box-shadow:0 0 0 3px rgba(198,153,58,0.25);"></span>
             <p class="bio-timeline-label en">Independent Practice · Berlin</p>
             <p class="bio-timeline-label de">Selbstständige Kanzlei · Berlin</p>
+            <p class="bio-timeline-label fr">Cabinet indépendant · Berlin</p>
             <p class="bio-timeline-label ru">Самостоятельная практика · Берлин</p>
-            <p class="bio-timeline-value en">Tax Law &amp; Business Law — since 2008</p>
-            <p class="bio-timeline-value de">Steuerrecht &amp; Wirtschaftsrecht — seit 2008</p>
-            <p class="bio-timeline-value ru">Налоговое право и коммерческое право — с 2008 года</p>
+            <p class="bio-timeline-value en">Tax Law &amp; Business Law, since 2008</p>
+            <p class="bio-timeline-value de">Steuerrecht &amp; Wirtschaftsrecht, seit 2008</p>
+            <p class="bio-timeline-value fr">Droit fiscal et droit des affaires, depuis 2008</p>
+            <p class="bio-timeline-value ru">Налоговое право и коммерческое право, с 2008 года</p>
           </div>
         </div>
 
@@ -2611,14 +2674,20 @@
           <p class="en">
             Dr. Dr. Hans-Christian Hausmann studied at the Freie Universität Berlin, focusing early on tax law. During his first doctorate in political science, he worked as a research assistant at a Berlin law firm specialising in tax and commercial law.
           </p>
+          <p class="fr">
+            Maître Dr. Dr. Hans-Christian Hausmann a étudié à l'Université libre de Berlin (Freie Universität Berlin) et s'est spécialisé très tôt en droit fiscal. Pendant son premier doctorat en sciences politiques, il a travaillé comme assistant de recherche dans un cabinet berlinois spécialisé en droit fiscal et commercial.
+          </p>
           <p class="ru">
             Г-н адвокат Dr. Dr. Ганс-Кристиан Хаусманн обучался на юридическом факультете Свободного университета Берлина и рано специализировался в области налогового права. В период своей первой докторской диссертации по политологии он работал научным сотрудником в берлинской юридической фирме, специализирующейся на налоговом и коммерческом праве.
           </p>
           <p class="de">
-            Nach dem Referendariat am Landgericht Münster und dem Zweiten Staatsexamen in NRW absolvierte er ein einjähriges Studium an der University of Glasgow mit Abschluss als Master of Law (LL.M.). Seit Anfang 2008 ist er als selbstständiger Rechtsanwalt in Berlin tätig — und erwarb nebenberuflich den weiteren Doktortitel Dr. iur. Er war als Hochschuldozent tätig und Autor zahlreicher Fachbeiträge in juristischen Fachzeitschriften.
+            Nach dem Referendariat am Landgericht Münster und dem Zweiten Staatsexamen in NRW absolvierte er ein einjähriges Studium an der University of Glasgow mit Abschluss als Master of Law (LL.M.). Seit Anfang 2008 ist er als selbstständiger Rechtsanwalt in Berlin tätig, und erwarb nebenberuflich den weiteren Doktortitel Dr. iur. Er war als Hochschuldozent tätig und Autor zahlreicher Fachbeiträge in juristischen Fachzeitschriften.
           </p>
           <p class="en">
             After completing his legal traineeship at the Landgericht Münster and the Second State Examination in NRW, he pursued a one-year LL.M. at the University of Glasgow. Since 2008 he has practised independently in Berlin, earning a second doctorate (Dr. iur.) alongside his practice. He has served as a university lecturer and published numerous articles in legal journals.
+          </p>
+          <p class="fr">
+            Après son stage juridique au tribunal régional de Münster et son second examen d'État en Rhénanie-du-Nord-Westphalie, il a suivi un LL.M. d'un an à l'Université de Glasgow. Depuis 2008, il exerce en tant qu'avocat indépendant à Berlin et a obtenu, en parallèle de sa pratique, un second doctorat (Dr. iur.). Il a été chargé de cours universitaire et a publié de nombreux articles dans des revues juridiques.
           </p>
           <p class="ru">
             После стажировки в Земельном суде Мюнстера и сдачи второго государственного экзамена в земле Северный Рейн-Вестфалия он окончил годичную программу LL.M. в Университете Глазго. С 2008 года ведёт самостоятельную адвокатскую практику в Берлине, получив параллельно вторую докторскую степень (Dr. iur.). Преподавал в университете и опубликовал многочисленные статьи в юридических изданиях.
@@ -2639,22 +2708,26 @@
         <span class="eyebrow-dot"></span>
         <span class="en">Take the First Step</span>
         <span class="de">Jetzt den ersten Schritt machen</span>
+        <span class="fr">Faites le premier pas</span>
         <span class="ru">Сделайте первый шаг</span>
       </div>
       <h2>
         <span class="en">Your tax &amp; legal matters<br>deserve <em>expert attention</em></span>
         <span class="de">Ihre steuerlichen Angelegenheiten<br>verdienen <em>Expertenwissen</em></span>
+        <span class="fr">Vos affaires fiscales et juridiques<br>méritent une <em>expertise dédiée</em></span>
         <span class="ru">Ваши налоговые и правовые дела<br>заслуживают <em>экспертного внимания</em></span>
       </h2>
       <p>
         <span class="en">With 20+ years of specialist experience, we provide clear, actionable advice tailored to your unique business situation. Every mandate is handled with the same rigour and commitment.</span>
-        <span class="de">Mit über 20 Jahren Fachkompetenz bieten wir klare, handlungsorientierte Beratung für Ihre individuelle Unternehmenssituation — jedes Mandat mit gleichem Anspruch und Engagement.</span>
+        <span class="de">Mit über 20 Jahren Fachkompetenz bieten wir klare, handlungsorientierte Beratung für Ihre individuelle Unternehmenssituation, jedes Mandat mit gleichem Anspruch und Engagement.</span>
+        <span class="fr">Forts de plus de 20 ans d'expérience spécialisée, nous fournissons des conseils clairs et concrets, adaptés à la situation particulière de votre entreprise. Chaque dossier est traité avec la même rigueur et le même engagement.</span>
         <span class="ru">Обладая более чем 20-летним специализированным опытом, мы предоставляем чёткие, практически ориентированные рекомендации, адаптированные к вашей конкретной деловой ситуации. Каждое дело ведётся с одинаковой тщательностью и преданностью.</span>
       </p>
       <div class="cta-band-actions">
         <a href="#contact" class="btn-primary">
           <span class="en">Arrange a Consultation</span>
           <span class="de">Beratungsgespräch anfragen</span>
+          <span class="fr">Demander une consultation</span>
           <span class="ru">Записаться на консультацию</span>
         </a>
         <a href="tel:+493085994000" class="btn-ghost-light">030 / 85 99 40-0</a>
@@ -2667,48 +2740,51 @@
     <div class="mandanten-inner">
       <span class="section-label de">Mandanten</span>
       <span class="section-label en">Clients</span>
+      <span class="section-label fr">Clients</span>
       <span class="section-label ru">Клиенты</span>
       <h2 class="mandanten-heading">
         <span class="de">Unsere Mandanten</span>
         <span class="en">Our Clients</span>
+        <span class="fr">Nos Clients</span>
         <span class="ru">Наши клиенты</span>
       </h2>
       <div class="gold-rule" style="margin:0 0 24px;"></div>
       <p class="mandanten-intro">
         <span class="de">Unsere Kanzlei vertritt seit vielen Jahren Mandanten aus ganz unterschiedlichen Branchen sprichwörtlich von A–Z:</span>
-        <span class="en">Our firm has represented clients from a wide range of industries for many years — literally from A to Z:</span>
-        <span class="ru">На протяжении многих лет наша фирма представляет интересы клиентов из самых разных отраслей — буквально от А до Я:</span>
+        <span class="en">Our firm has represented clients from a wide range of industries for many years, literally from A to Z:</span>
+        <span class="fr">Notre cabinet représente depuis de nombreuses années des clients issus de secteurs très divers, littéralement de A à Z :</span>
+        <span class="ru">На протяжении многих лет наша фирма представляет интересы клиентов из самых разных отраслей, буквально от А до Я:</span>
       </p>
       <div class="mandanten-grid">
         <div class="mandant-card reveal">
-          <span class="mandant-watermark" aria-hidden="true"><span class="de">A</span><span class="en">A</span><span class="ru">А</span></span>
-          <p class="mandant-letter"><span class="de">A wie</span><span class="en">A as in</span><span class="ru">А —</span></p>
-          <p class="mandant-desc"><span class="de">Arztpraxen und Autohäuser</span><span class="en">Architects &amp; advertising agencies</span><span class="ru">Аптеки и автосалоны</span></p>
+          <span class="mandant-watermark" aria-hidden="true"><span class="de">A</span><span class="en">A</span><span class="fr">A</span><span class="ru">А</span></span>
+          <p class="mandant-letter"><span class="de">A wie</span><span class="en">A as in</span><span class="fr">A comme</span><span class="ru">А</span></p>
+          <p class="mandant-desc"><span class="de">Arztpraxen und Autohäuser</span><span class="en">Architects &amp; advertising agencies</span><span class="fr">Architectes et agences de publicité</span><span class="ru">Аптеки и автосалоны</span></p>
         </div>
         <div class="mandant-card reveal">
-          <span class="mandant-watermark" aria-hidden="true"><span class="de">B</span><span class="en">B</span><span class="ru">Б</span></span>
-          <p class="mandant-letter"><span class="de">B wie</span><span class="en">B as in</span><span class="ru">Б —</span></p>
-          <p class="mandant-desc"><span class="de">Bauunternehmen und Busunternehmen</span><span class="en">Builders &amp; bakeries</span><span class="ru">Булочные и бюро переводов</span></p>
+          <span class="mandant-watermark" aria-hidden="true"><span class="de">B</span><span class="en">B</span><span class="fr">B</span><span class="ru">Б</span></span>
+          <p class="mandant-letter"><span class="de">B wie</span><span class="en">B as in</span><span class="fr">B comme</span><span class="ru">Б</span></p>
+          <p class="mandant-desc"><span class="de">Bauunternehmen und Busunternehmen</span><span class="en">Builders &amp; bakeries</span><span class="fr">Boulangeries et entreprises du bâtiment</span><span class="ru">Булочные и бюро переводов</span></p>
         </div>
         <div class="mandant-card reveal">
-          <span class="mandant-watermark" aria-hidden="true"><span class="de">C</span><span class="en">C</span><span class="ru">В</span></span>
-          <p class="mandant-letter"><span class="de">C wie</span><span class="en">C as in</span><span class="ru">В —</span></p>
-          <p class="mandant-desc"><span class="de">Chemieunternehmen und Consulting</span><span class="en">Consulting firms &amp; car dealerships</span><span class="ru">Врачебные практики и веб-студии</span></p>
+          <span class="mandant-watermark" aria-hidden="true"><span class="de">C</span><span class="en">C</span><span class="fr">C</span><span class="ru">В</span></span>
+          <p class="mandant-letter"><span class="de">C wie</span><span class="en">C as in</span><span class="fr">C comme</span><span class="ru">В</span></p>
+          <p class="mandant-desc"><span class="de">Chemieunternehmen und Consulting</span><span class="en">Consulting firms &amp; car dealerships</span><span class="fr">Cabinets de conseil et concessions automobiles</span><span class="ru">Врачебные практики и веб-студии</span></p>
         </div>
         <div class="mandant-card reveal">
-          <span class="mandant-watermark" aria-hidden="true"><span class="de">D</span><span class="en">D</span><span class="ru">Г</span></span>
-          <p class="mandant-letter"><span class="de">D wie</span><span class="en">D as in</span><span class="ru">Г —</span></p>
-          <p class="mandant-desc"><span class="de">Dachdeckerunternehmen und Druckereien</span><span class="en">Dental practices &amp; design studios</span><span class="ru">Гостиницы и грузоперевозки</span></p>
+          <span class="mandant-watermark" aria-hidden="true"><span class="de">D</span><span class="en">D</span><span class="fr">D</span><span class="ru">Г</span></span>
+          <p class="mandant-letter"><span class="de">D wie</span><span class="en">D as in</span><span class="fr">D comme</span><span class="ru">Г</span></p>
+          <p class="mandant-desc"><span class="de">Dachdeckerunternehmen und Druckereien</span><span class="en">Dental practices &amp; design studios</span><span class="fr">Dentistes et studios de design</span><span class="ru">Гостиницы и грузоперевозки</span></p>
         </div>
         <div class="mandant-card mandant-card-more reveal">
           <span class="mandant-watermark" aria-hidden="true">…</span>
-          <p class="mandant-letter"><span class="de">… wie</span><span class="en">… and</span><span class="ru">… и</span></p>
-          <p class="mandant-desc"><span class="de">und viele weitere Branchen</span><span class="en">many more industries</span><span class="ru">многие другие отрасли</span></p>
+          <p class="mandant-letter"><span class="de">… wie</span><span class="en">… and</span><span class="fr">… et</span><span class="ru">… и</span></p>
+          <p class="mandant-desc"><span class="de">und viele weitere Branchen</span><span class="en">many more industries</span><span class="fr">bien d'autres secteurs</span><span class="ru">многие другие отрасли</span></p>
         </div>
         <div class="mandant-card reveal">
-          <span class="mandant-watermark" aria-hidden="true"><span class="de">Z</span><span class="en">Z</span><span class="ru">Я</span></span>
-          <p class="mandant-letter"><span class="de">Z wie</span><span class="en">Z as in</span><span class="ru">Я —</span></p>
-          <p class="mandant-desc"><span class="de">Zahnarztpraxen und Zahntechnik</span><span class="en">Zoos &amp; zero-waste stores</span><span class="ru">Языковые школы и ярмарки</span></p>
+          <span class="mandant-watermark" aria-hidden="true"><span class="de">Z</span><span class="en">Z</span><span class="fr">Z</span><span class="ru">Я</span></span>
+          <p class="mandant-letter"><span class="de">Z wie</span><span class="en">Z as in</span><span class="fr">Z comme</span><span class="ru">Я</span></p>
+          <p class="mandant-desc"><span class="de">Zahnarztpraxen und Zahntechnik</span><span class="en">Zoos &amp; zero-waste stores</span><span class="fr">Zoos et magasins zéro déchet</span><span class="ru">Языковые школы и ярмарки</span></p>
         </div>
       </div>
     </div>
@@ -2720,16 +2796,19 @@
       <div>
         <span class="section-label en">Contact</span>
         <span class="section-label de">Kontakt</span>
+        <span class="section-label fr">Contact</span>
         <span class="section-label ru">Контакт</span>
         <h2 class="contact-heading">
           <span class="en">Let's discuss<br>your situation</span>
           <span class="de">Sprechen wir über<br>Ihre Situation</span>
+          <span class="fr">Discutons de<br>votre situation</span>
           <span class="ru">Обсудим<br>вашу ситуацию</span>
         </h2>
         <div class="gold-rule" style="margin-bottom:20px;"></div>
         <p class="contact-sub">
           <span class="en">We respond to all enquiries within 24 hours. Consultations are available in German and English. All information is treated with strict confidentiality.</span>
           <span class="de">Wir antworten auf alle Anfragen innerhalb von 24 Stunden. Beratungsgespräche sind auf Deutsch und Englisch möglich. Alle Informationen werden streng vertraulich behandelt.</span>
+          <span class="fr">Nous répondons à toutes les demandes sous 24 heures. Les consultations sont disponibles en allemand et en anglais. Toutes les informations sont traitées en stricte confidentialité.</span>
           <span class="ru">Мы отвечаем на все запросы в течение 24 часов. Консультации проводятся на немецком и английском языках. Вся информация строго конфиденциальна.</span>
         </p>
         <div class="contact-details">
@@ -2740,6 +2819,7 @@
             <div>
               <p class="contact-item-label en">Phone</p>
               <p class="contact-item-label de">Telefon</p>
+              <p class="contact-item-label fr">Téléphone</p>
               <p class="contact-item-label ru">Телефон</p>
               <p class="contact-item-value"><a href="tel:+493085994000">+49 30 / 85 99 40-0</a></p>
             </div>
@@ -2769,6 +2849,7 @@
             <div>
               <p class="contact-item-label en">Location</p>
               <p class="contact-item-label de">Standort</p>
+              <p class="contact-item-label fr">Adresse</p>
               <p class="contact-item-label ru">Адрес</p>
               <p class="contact-item-value">Bundesallee 91<br>12161 Berlin</p>
             </div>
@@ -2780,9 +2861,11 @@
             <div>
               <p class="contact-item-label en">Office Hours</p>
               <p class="contact-item-label de">Bürozeiten</p>
+              <p class="contact-item-label fr">Heures d'ouverture</p>
               <p class="contact-item-label ru">Часы работы</p>
               <p class="contact-item-value en">Monday – Friday, 09:00 – 18:00</p>
               <p class="contact-item-value de">Montag – Freitag, 09:00 – 18:00 Uhr</p>
+              <p class="contact-item-value fr">Lundi – vendredi, 09h00 – 18h00</p>
               <p class="contact-item-value ru">Понедельник – пятница, 09:00 – 18:00</p>
             </div>
           </div>
@@ -2794,22 +2877,25 @@
           <h3 class="contact-form-title">
             <span class="en">Request a Consultation</span>
             <span class="de">Beratungsgespräch anfragen</span>
+            <span class="fr">Demander une consultation</span>
             <span class="ru">Запросить консультацию</span>
           </h3>
           <form id="contact-form" novalidate>
             <input type="hidden" name="access_key" value="781019a8-32b5-4efd-8f26-4cb6ce4fdbae" />
-            <input type="hidden" name="subject" value="New Consultation Request — Kanzlei Hausmann" />
+            <input type="hidden" name="subject" value="New Consultation Request: Kanzlei Hausmann" />
             <input type="hidden" name="from_name" value="Kanzlei Hausmann Website" />
             <div class="form-row" style="margin-bottom:0;">
               <div class="form-group">
                 <label class="form-label en" for="input-firstname">First Name</label>
                 <label class="form-label de" for="input-firstname">Vorname</label>
+                <label class="form-label fr" for="input-firstname">Prénom</label>
                 <label class="form-label ru" for="input-firstname">Имя</label>
                 <input type="text" id="input-firstname" name="firstname" class="form-input" required />
               </div>
               <div class="form-group">
                 <label class="form-label en" for="input-lastname">Last Name</label>
                 <label class="form-label de" for="input-lastname">Nachname</label>
+                <label class="form-label fr" for="input-lastname">Nom</label>
                 <label class="form-label ru" for="input-lastname">Фамилия</label>
                 <input type="text" id="input-lastname" name="lastname" class="form-input" required />
               </div>
@@ -2817,51 +2903,59 @@
             <div class="form-group">
               <label class="form-label en" for="input-email">E-Mail</label>
               <label class="form-label de" for="input-email">E-Mail</label>
+              <label class="form-label fr" for="input-email">E-Mail</label>
               <label class="form-label ru" for="input-email">E-Mail</label>
               <input type="email" id="input-email" name="email" class="form-input" required />
             </div>
             <div class="form-group">
               <label class="form-label en" for="input-phone">Phone Number</label>
               <label class="form-label de" for="input-phone">Telefonnummer</label>
+              <label class="form-label fr" for="input-phone">Numéro de téléphone</label>
               <label class="form-label ru" for="input-phone">Номер телефона</label>
               <input type="tel" id="input-phone" name="phone" class="form-input" placeholder="+49 30 000000" />
             </div>
             <div class="form-group">
               <label class="form-label en" for="input-area">Practice Area</label>
               <label class="form-label de" for="input-area">Leistungsbereich</label>
+              <label class="form-label fr" for="input-area">Domaine d'activité</label>
               <label class="form-label ru" for="input-area">Область практики</label>
               <select id="input-area" name="area" class="form-select">
-                <option value="" data-en="Please select…" data-de="Bitte wählen…" data-ru="Пожалуйста, выберите…">Bitte wählen…</option>
-                <option value="tax-law" data-en="Tax Law &amp; Criminal Tax Law" data-de="Steuerrecht &amp; Steuerstrafrecht" data-ru="Налоговое право и уголовное налоговое право">Steuerrecht &amp; Steuerstrafrecht</option>
-                <option value="tax-advisory" data-en="Tax Advisory &amp; Consulting" data-de="Steuerberatung" data-ru="Налоговое консультирование">Steuerberatung</option>
-                <option value="tax-planning" data-en="Tax Planning for Businesses" data-de="Steuergestaltung bei Unternehmen" data-ru="Налоговое планирование для бизнеса">Steuergestaltung bei Unternehmen</option>
-                <option value="other" data-en="Other / General Enquiry" data-de="Sonstiges / Allgemeine Anfrage" data-ru="Другое / Общий запрос">Sonstiges / Allgemeine Anfrage</option>
+                <option value="" data-en="Please select…" data-de="Bitte wählen…" data-fr="Veuillez choisir…" data-ru="Пожалуйста, выберите…">Bitte wählen…</option>
+                <option value="tax-law" data-en="Tax Law &amp; Criminal Tax Law" data-de="Steuerrecht &amp; Steuerstrafrecht" data-fr="Droit fiscal &amp; pénal fiscal" data-ru="Налоговое право и уголовное налоговое право">Steuerrecht &amp; Steuerstrafrecht</option>
+                <option value="tax-advisory" data-en="Tax Advisory &amp; Consulting" data-de="Steuerberatung" data-fr="Conseil fiscal" data-ru="Налоговое консультирование">Steuerberatung</option>
+                <option value="tax-planning" data-en="Tax Planning for Businesses" data-de="Steuergestaltung bei Unternehmen" data-fr="Planification fiscale pour entreprises" data-ru="Налоговое планирование для бизнеса">Steuergestaltung bei Unternehmen</option>
+                <option value="other" data-en="Other / General Enquiry" data-de="Sonstiges / Allgemeine Anfrage" data-fr="Autre / Demande générale" data-ru="Другое / Общий запрос">Sonstiges / Allgemeine Anfrage</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label en" for="input-message">Message</label>
               <label class="form-label de" for="input-message">Nachricht</label>
+              <label class="form-label fr" for="input-message">Message</label>
               <label class="form-label ru" for="input-message">Сообщение</label>
               <textarea id="input-message" name="message" class="form-textarea"></textarea>
             </div>
             <button type="submit" class="btn-primary" style="width:100%;">
               <span class="en">Send Request</span>
               <span class="de">Anfrage senden</span>
+              <span class="fr">Envoyer la demande</span>
               <span class="ru">Отправить запрос</span>
             </button>
             <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(0,180,100,0.08);border:1px solid rgba(0,180,100,0.25);border-radius:8px;text-align:center;">
               <p class="en" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Your message has been sent. We will be in touch shortly.</p>
               <p class="de" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.</p>
+              <p class="fr" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Votre message a été envoyé. Nous vous contacterons bientôt.</p>
               <p class="ru" style="color:#00a060;font-size:14px;font-weight:500;margin:0;">✓ Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.</p>
             </div>
             <div id="form-error" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(200,50,50,0.07);border:1px solid rgba(200,50,50,0.25);border-radius:8px;text-align:center;">
               <p class="en" style="color:#c03030;font-size:14px;font-weight:500;margin:0;">✗ Something went wrong. Please try again or email us directly.</p>
               <p class="de" style="color:#c03030;font-size:14px;font-weight:500;margin:0;">✗ Etwas ist schiefgelaufen. Bitte versuche es erneut.</p>
+              <p class="fr" style="color:#c03030;font-size:14px;font-weight:500;margin:0;">✗ Une erreur s'est produite. Veuillez réessayer ou nous écrire directement.</p>
               <p class="ru" style="color:#c03030;font-size:14px;font-weight:500;margin:0;">✗ Что-то пошло не так. Пожалуйста, попробуйте ещё раз или напишите нам напрямую.</p>
             </div>
           </form>
           <p class="form-note en">All information is treated with strict confidentiality in accordance with German data protection law (DSGVO / GDPR).</p>
           <p class="form-note de">Alle Angaben werden streng vertraulich gemäß dem deutschen Datenschutzrecht (DSGVO) behandelt.</p>
+          <p class="form-note fr">Toutes les informations sont traitées en stricte confidentialité conformément au droit allemand de la protection des données (DSGVO / RGPD).</p>
           <p class="form-note ru">Все данные обрабатываются строго конфиденциально в соответствии с немецким законодательством о защите персональных данных (DSGVO / GDPR).</p>
         </div>
         <div class="contact-map-card">
@@ -2878,6 +2972,7 @@
               <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
               <span class="en">Get Directions</span>
               <span class="de">Route planen</span>
+              <span class="fr">Itinéraire</span>
               <span class="ru">Проложить маршрут</span>
             </a>
           </div>
@@ -2895,6 +2990,7 @@
       <div class="datev-text">
         <p class="de">Unsere Kanzlei arbeitet mit DATEV. Wir bieten für unsere Mandanten im Weiteren an:</p>
         <p class="en">Our firm works with DATEV. We additionally offer our clients:</p>
+        <p class="fr">Notre cabinet travaille avec DATEV. Nous proposons également à nos clients :</p>
         <p class="ru">Наша фирма работает с DATEV. Мы дополнительно предлагаем нашим клиентам:</p>
         <div class="datev-tools">
           <span class="datev-tool">
@@ -2921,11 +3017,13 @@
               <span class="footer-logo-name">Dr. Dr. Hausmann</span>
               <span class="footer-logo-sub en">Tax Law &amp; Legal Counsel · Berlin</span>
               <span class="footer-logo-sub de">Steuerberatung &amp; Steuerrecht · Berlin</span>
+              <span class="footer-logo-sub fr">Droit Fiscal &amp; Conseil Juridique · Berlin</span>
               <span class="footer-logo-sub ru">Налоговое право · Берлин</span>
             </div>
           </a>
           <p class="en">A Berlin-based law and tax firm specialising in tax law, criminal tax law, tax advisory, and business tax planning. Advising and representing business clients with high standards of expertise and client service.</p>
           <p class="de">Eine Berliner Rechtsanwalts und Steuerkanzlei mit Schwerpunkt Steuerberatung, Steuerrecht, Steuerstrafrecht und Steuergestaltung. Beratung und Vertretung von Unternehmen mit höchsten Ansprüchen.</p>
+          <p class="fr">Un cabinet d'avocats fiscalistes berlinois spécialisé en droit fiscal, droit pénal fiscal, conseil fiscal et planification fiscale des entreprises. Conseil et représentation de clients professionnels avec des standards élevés d'expertise et de service.</p>
           <p class="ru">Берлинская юридическая и налоговая фирма, специализирующаяся на налоговом праве, уголовном налоговом праве, налоговом консультировании и налоговом планировании для бизнеса. Консультирование и представление интересов деловых клиентов на высоком профессиональном уровне.</p>
           <div class="footer-contact-mini">
             <a href="tel:+493085994000">030 / 85 99 40-0</a>
@@ -2935,31 +3033,34 @@
         <div>
           <p class="footer-col-title en">Practice Areas</p>
           <p class="footer-col-title de">Leistungen</p>
+          <p class="footer-col-title fr">Domaines d'activité</p>
           <p class="footer-col-title ru">Области практики</p>
           <ul class="footer-links">
-            <li><a href="#services"><span class="en">Tax Law &amp; Criminal Tax Law</span><span class="de">Steuerrecht &amp; Steuerstrafrecht</span><span class="ru">Налоговое право и уголовное налоговое право</span></a></li>
-            <li><a href="#services"><span class="en">Tax Advisory</span><span class="de">Steuerberatung</span><span class="ru">Налоговое консультирование</span></a></li>
-            <li><a href="#services"><span class="en">Tax Planning for Businesses</span><span class="de">Steuergestaltung bei Unternehmen</span><span class="ru">Налоговое планирование для бизнеса</span></a></li>
+            <li><a href="#services"><span class="en">Tax Law &amp; Criminal Tax Law</span><span class="de">Steuerrecht &amp; Steuerstrafrecht</span><span class="fr">Droit fiscal &amp; pénal fiscal</span><span class="ru">Налоговое право и уголовное налоговое право</span></a></li>
+            <li><a href="#services"><span class="en">Tax Advisory</span><span class="de">Steuerberatung</span><span class="fr">Conseil fiscal</span><span class="ru">Налоговое консультирование</span></a></li>
+            <li><a href="#services"><span class="en">Tax Planning for Businesses</span><span class="de">Steuergestaltung bei Unternehmen</span><span class="fr">Planification fiscale pour entreprises</span><span class="ru">Налоговое планирование для бизнеса</span></a></li>
           </ul>
         </div>
         <div>
           <p class="footer-col-title en">Firm</p>
           <p class="footer-col-title de">Kanzlei</p>
+          <p class="footer-col-title fr">Cabinet</p>
           <p class="footer-col-title ru">Фирма</p>
           <ul class="footer-links">
-            <li><a href="#attorney"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span><span class="ru">Адвокат</span></a></li>
-            <li><a href="#mandanten"><span class="en">Clients</span><span class="de">Mandanten</span><span class="ru">Клиенты</span></a></li>
-            <li><a href="#contact"><span class="en">Contact</span><span class="de">Kontakt</span><span class="ru">Контакт</span></a></li>
+            <li><a href="#attorney"><span class="en">Attorney</span><span class="de">Rechtsanwalt</span><span class="fr">Avocat</span><span class="ru">Адвокат</span></a></li>
+            <li><a href="#mandanten"><span class="en">Clients</span><span class="de">Mandanten</span><span class="fr">Clients</span><span class="ru">Клиенты</span></a></li>
+            <li><a href="#contact"><span class="en">Contact</span><span class="de">Kontakt</span><span class="fr">Contact</span><span class="ru">Контакт</span></a></li>
           </ul>
         </div>
         <div>
           <p class="footer-col-title en">Legal</p>
           <p class="footer-col-title de">Rechtliches</p>
+          <p class="footer-col-title fr">Mentions légales</p>
           <p class="footer-col-title ru">Правовое</p>
           <ul class="footer-links">
             <li><a href="#" onclick="openModal('impressum-modal');return false;">Impressum</a></li>
-            <li><a href="#" onclick="openModal('datenschutz-modal');return false;"><span class="en">Privacy Policy</span><span class="de">Datenschutzerklärung</span><span class="ru">Политика конфиденциальности</span></a></li>
-            <li><a href="tel:+493085994000"><span class="en">Call Us</span><span class="de">Anrufen</span><span class="ru">Позвонить нам</span></a></li>
+            <li><a href="#" onclick="openModal('datenschutz-modal');return false;"><span class="en">Privacy Policy</span><span class="de">Datenschutzerklärung</span><span class="fr">Politique de confidentialité</span><span class="ru">Политика конфиденциальности</span></a></li>
+            <li><a href="tel:+493085994000"><span class="en">Call Us</span><span class="de">Anrufen</span><span class="fr">Nous appeler</span><span class="ru">Позвонить нам</span></a></li>
           </ul>
         </div>
       </div>
@@ -2967,6 +3068,7 @@
       <div class="footer-bottom">
         <span class="footer-copy en">© 2026 Kanzlei Dr. Dr. Hausmann, Berlin. All rights reserved.</span>
         <span class="footer-copy de">© 2026 Kanzlei Dr. Dr. Hausmann, Berlin. Alle Rechte vorbehalten.</span>
+        <span class="footer-copy fr">© 2026 Kanzlei Dr. Dr. Hausmann, Berlin. Tous droits réservés.</span>
         <span class="footer-copy ru">© 2026 Kanzlei Dr. Dr. Hausmann, Берлин. Все права защищены.</span>
         <div class="footer-legal">
           <a href="#" onclick="openModal('impressum-modal');return false;">Impressum</a>
@@ -3083,12 +3185,15 @@
       document.documentElement.setAttribute('lang', lang);
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
       document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
       document.getElementById('mobile-btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('mobile-btn-de').classList.toggle('active', lang === 'de');
+      document.getElementById('mobile-btn-fr').classList.toggle('active', lang === 'fr');
       document.getElementById('mobile-btn-ru').classList.toggle('active', lang === 'ru');
       document.getElementById('mob-hdr-en').classList.toggle('active', lang === 'en');
       document.getElementById('mob-hdr-de').classList.toggle('active', lang === 'de');
+      document.getElementById('mob-hdr-fr').classList.toggle('active', lang === 'fr');
       document.getElementById('mob-hdr-ru').classList.toggle('active', lang === 'ru');
       // Update select options text
       document.querySelectorAll('#input-area option').forEach(opt => {
@@ -3097,7 +3202,7 @@
       });
     }
 
-    // Form submit handler — powered by Web3Forms
+    // Form submit handler: powered by Web3Forms
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', async function(e) {
