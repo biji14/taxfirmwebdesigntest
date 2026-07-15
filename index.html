@@ -435,124 +435,21 @@
       66%       { transform: translate(-20px, 20px); }
     }
 
-    @keyframes hero-line-rise {
-      to { transform: translateY(0); }
-    }
-    @keyframes hero-rule-grow {
-      to { transform: scaleX(1); }
-    }
-    @keyframes hero-kenburns {
-      from { transform: scale(1); }
-      to   { transform: scale(1.05); }
-    }
-    @keyframes hero-scroll-dot {
-      0%   { transform: translateY(0); opacity: 1; }
-      70%  { transform: translateY(15px); opacity: 0; }
-      100% { transform: translateY(15px); opacity: 0; }
-    }
-
     .hero-anim-eyebrow {
       opacity: 0;
       animation: hero-fade-up 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
     }
+    .hero-anim-heading {
+      opacity: 0;
+      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 0.25s forwards;
+    }
     .hero-anim-sub {
       opacity: 0;
-      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
+      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 0.45s forwards;
     }
     .hero-anim-actions {
       opacity: 0;
-      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 0.72s forwards;
-    }
-    .hero-anim-stats {
-      opacity: 0;
-      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 0.9s forwards;
-    }
-
-    /* Headline: line-by-line clip-mask rise */
-    .hero-heading > .en, .hero-heading > .de,
-    .hero-heading > .fr, .hero-heading > .ru { display: block; }
-    .hero-heading .hline {
-      display: block;
-      overflow: hidden;
-      padding-bottom: 0.09em;
-      margin-bottom: -0.09em;
-    }
-    .hero-heading .hline > span { display: inline-block; }
-    html.js-anim .hero-heading .hline > span {
-      transform: translateY(115%);
-      animation: hero-line-rise 0.85s cubic-bezier(0.22,1,0.36,1) forwards;
-    }
-    html.js-anim .hero-heading .hline:nth-child(1) > span { animation-delay: 0.12s; }
-    html.js-anim .hero-heading .hline:nth-child(2) > span { animation-delay: 0.24s; }
-    html.js-anim .hero-heading .hline:nth-child(3) > span { animation-delay: 0.36s; }
-
-    /* Gold rule that draws itself under the headline */
-    .hero-rule {
-      width: 64px;
-      height: 2px;
-      background: linear-gradient(to right, var(--gold), transparent);
-      border-radius: 2px;
-      margin: 0 0 24px;
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: hero-rule-grow 0.8s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
-    }
-
-    /* Desktop hero stats row */
-    .hero-stats {
-      display: flex;
-      align-items: stretch;
-      gap: 28px;
-      margin-top: 48px;
-    }
-    .hero-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding-left: 16px;
-      border-left: 1px solid var(--gold-border);
-    }
-    .hero-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--gold-pale);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .hero-stat-label {
-      font-size: 11.5px;
-      color: var(--text-light-m);
-      line-height: 1.45;
-      max-width: 130px;
-    }
-
-    /* Scroll-down indicator */
-    .hero-scroll {
-      position: absolute;
-      bottom: 26px;
-      left: 50%;
-      margin-left: -13px;
-      width: 26px;
-      height: 42px;
-      border: 1px solid rgba(236,231,216,0.3);
-      border-radius: 14px;
-      display: flex;
-      justify-content: center;
-      padding-top: 8px;
-      z-index: 2;
-      opacity: 0;
-      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 1.3s forwards;
-      transition: border-color 0.2s ease;
-    }
-    .hero-scroll:hover { border-color: var(--gold-border-s); }
-    .hero-scroll:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-    .hero-scroll span {
-      width: 3px;
-      height: 8px;
-      border-radius: 2px;
-      background: var(--gold-light);
-      animation: hero-scroll-dot 2.2s ease-in-out infinite;
+      animation: hero-fade-up 0.8s cubic-bezier(0.22,1,0.36,1) 0.62s forwards;
     }
 
     /* ── Hero (dark) ─────────────────────────────── */
@@ -627,7 +524,7 @@
       font-size: clamp(40px, 5vw, 68px);
       font-weight: 500;
       color: var(--text-light);
-      margin: 0 0 20px;
+      margin: 0 0 26px;
       line-height: 1.07;
     }
 
@@ -659,7 +556,7 @@
       border-radius: 6px;
       overflow: hidden;
       z-index: 1;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(198,153,58,0.30);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
     }
 
     .hero-portrait-img img {
@@ -669,15 +566,12 @@
       object-position: top center;
       display: block;
       filter: brightness(0.9);
-      transition: filter 0.6s ease;
-    }
-
-    html.js-anim .hero-portrait-img img {
-      animation: hero-kenburns 16s ease-in-out infinite alternate;
+      transition: transform 0.6s ease, filter 0.6s ease;
     }
 
     .hero-portrait-img:hover img {
-      filter: brightness(0.97);
+      transform: scale(1.02);
+      filter: brightness(0.95);
     }
 
     /* Bottom gradient for name overlay */
@@ -1822,11 +1716,6 @@
          HERO: entrance animation sequence
       ════════════════════════════════════════════ */
       .hero           { padding: 52px 20px 56px; min-height: auto; }
-      .hero-scroll    { display: none; }
-      .hero-stats     { gap: 14px; margin-top: 30px; }
-      .hero-stat      { flex: 1; padding-left: 10px; }
-      .hero-stat-num  { font-size: 20px; }
-      .hero-stat-label { font-size: 10.5px; max-width: none; }
       .hero .hero-heading {
         animation: mob-fade-up 0.65s cubic-bezier(0.22,1,0.36,1) both;
         animation-delay: 0.2s;
@@ -2045,14 +1934,10 @@
       html.js-anim .reveal-left:not(.visible),
       html.js-anim .reveal-right:not(.visible) { opacity: 1; transform: none; }
       .reveal, .reveal-left, .reveal-right { transition: none; }
-      .hero-anim-eyebrow, .hero-anim-sub, .hero-anim-actions, .hero-anim-stats,
-      .hero-right, .hero-rule, .hero-scroll, .hero-scroll span,
-      .hero-heading .hline > span, .hero-portrait-img img {
+      .hero-anim-eyebrow, .hero-anim-heading, .hero-anim-sub, .hero-anim-actions, .hero-right {
         animation: none !important;
         opacity: 1 !important;
-        transform: none !important;
       }
-      .hero-rule { transform: scaleX(1) !important; }
       .hero::before, .hero::after { animation: none !important; }
       .gold-rule { transition: none; transform: scaleX(1) !important; }
       .btn-primary::before { display: none; }
@@ -2441,13 +2326,12 @@
       <!-- Left: headline -->
       <div>
 
-        <h1 class="hero-heading">
-          <span class="en"><span class="hline"><span>Expert Tax Law</span></span><span class="hline"><span>&amp; <em>Legal Counsel</em></span></span><span class="hline"><span>in Berlin</span></span></span>
-          <span class="de"><span class="hline"><span>Steuerberatung &amp;</span></span><span class="hline"><span><em>Steuerrecht</em></span></span><span class="hline"><span>in Berlin</span></span></span>
-          <span class="fr"><span class="hline"><span>Droit Fiscal</span></span><span class="hline"><span>&amp; <em>Conseil Juridique</em></span></span><span class="hline"><span>à Berlin</span></span></span>
-          <span class="ru"><span class="hline"><span>Налоговое право</span></span><span class="hline"><span>&amp; <em>Юридическое</em></span></span><span class="hline"><span>консультирование в Берлине</span></span></span>
+        <h1 class="hero-heading hero-anim-heading">
+          <span class="en">Expert Tax Law<br>&amp; <em>Legal Counsel</em><br>in Berlin</span>
+          <span class="de">Steuerberatung &amp;<br><em>Steuerrecht</em><br>in Berlin</span>
+          <span class="fr">Droit Fiscal<br>&amp; <em>Conseil Juridique</em><br>à Berlin</span>
+          <span class="ru">Налоговое право<br>&amp; <em>Юридическое</em><br>консультирование в Берлине</span>
         </h1>
-        <div class="hero-rule" aria-hidden="true"></div>
 
         <p class="hero-sub hero-anim-sub">
           <span class="en">Kanzlei Dr. Dr. Hausmann is a long-established Berlin law and tax firm specialising in tax consulting. We specialise in corporate tax law. Our firm represents businesses and entrepreneurs in their tax and legal matters.</span>
@@ -2471,35 +2355,6 @@
           </a>
         </div>
 
-        <div class="hero-stats hero-anim-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-num" data-count="20" data-suffix="+">20+</span>
-            <span class="hero-stat-label">
-              <span class="en">Years of specialist experience</span>
-              <span class="de">Jahre Fachkompetenz</span>
-              <span class="fr">Ans d'expertise</span>
-              <span class="ru">Лет опыта</span>
-            </span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">2008</span>
-            <span class="hero-stat-label">
-              <span class="en">Own Berlin practice since then</span>
-              <span class="de">Eigene Kanzlei in Berlin</span>
-              <span class="fr">Cabinet indépendant à Berlin</span>
-              <span class="ru">Собственная практика в Берлине</span>
-            </span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">A–Z</span>
-            <span class="hero-stat-label">
-              <span class="en">Clients across all industries</span>
-              <span class="de">Mandanten aus allen Branchen</span>
-              <span class="fr">Clients de tous secteurs</span>
-              <span class="ru">Клиенты из всех отраслей</span>
-            </span>
-          </div>
-        </div>
 
       </div>
 
@@ -2519,10 +2374,6 @@
         </div>
       </div>
     </div>
-
-    <a href="#services" class="hero-scroll" aria-label="Scroll down">
-      <span></span>
-    </a>
   </section>
 
   <!-- ── Trust strip (bright white) ───────────────── -->
@@ -3516,23 +3367,13 @@
     document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
     // ── Hero Parallax ──────────────────────────────
-    // Text drifts up slightly faster than the portrait for a layered feel.
-    // Desktop only: on small screens the hero is short and the shift would
-    // push content out of the section.
     const heroSection = document.querySelector('.hero');
-    if (heroSection && !prefersReducedMotion) {
+    if (heroSection) {
       const heroInner = heroSection.querySelector('.hero-inner');
-      const heroPortrait = heroSection.querySelector('.hero-portrait');
       window.addEventListener('scroll', () => {
-        if (window.innerWidth <= 1020) {
-          if (heroInner) heroInner.style.transform = '';
-          if (heroPortrait) heroPortrait.style.transform = '';
-          return;
-        }
         const y = window.scrollY;
-        if (y < window.innerHeight * 1.2) {
-          if (heroInner) heroInner.style.transform = `translateY(${y * 0.14}px)`;
-          if (heroPortrait) heroPortrait.style.transform = `translateY(${y * 0.07}px)`;
+        if (y < window.innerHeight * 1.2 && heroInner) {
+          heroInner.style.transform = `translateY(${y * 0.18}px)`;
         }
       }, { passive: true });
     }
