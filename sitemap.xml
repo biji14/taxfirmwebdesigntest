@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kanzlei-hausmann.berlin/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kanzlei-hausmann.berlin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanzlei-hausmann.berlin/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kanzlei-hausmann.berlin/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kanzlei-hausmann.berlin/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kanzlei-hausmann.berlin/" />
+  </url>
+  <url>
+    <loc>https://kanzlei-hausmann.berlin/en/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kanzlei-hausmann.berlin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanzlei-hausmann.berlin/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kanzlei-hausmann.berlin/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kanzlei-hausmann.berlin/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kanzlei-hausmann.berlin/" />
+  </url>
+  <url>
+    <loc>https://kanzlei-hausmann.berlin/fr/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kanzlei-hausmann.berlin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanzlei-hausmann.berlin/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kanzlei-hausmann.berlin/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kanzlei-hausmann.berlin/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kanzlei-hausmann.berlin/" />
+  </url>
+  <url>
+    <loc>https://kanzlei-hausmann.berlin/ru/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://kanzlei-hausmann.berlin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kanzlei-hausmann.berlin/en/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kanzlei-hausmann.berlin/fr/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kanzlei-hausmann.berlin/ru/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kanzlei-hausmann.berlin/" />
   </url>
 </urlset>
