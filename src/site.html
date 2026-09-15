@@ -1736,7 +1736,7 @@
       .nav-right         { display: none !important; }
       .hamburger         { display: flex; }
       .mob-lang-header   { display: flex; }
-      .nav-inner         { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 68px; gap: 0; }
+      .nav-inner         { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 68px; gap: 8px; }
     }
 
     /* ── Mobile entrance animation keyframes ─────── */
@@ -1758,14 +1758,15 @@
       /* ════════════════════════════════════════════
          NAV
       ════════════════════════════════════════════ */
-      .nav-inner      { padding: 0 16px; height: 58px; }
+      .nav-inner      { padding: 0 16px; height: 58px; gap: 6px; }
       .logo-sub       { display: none !important; }
-      .logo-name      { font-size: 12px; white-space: nowrap; letter-spacing: 0.04em; }
-      .logo-mark      { width: 32px; height: 32px; font-size: 10px; border-radius: 6px; }
-      .logo-divider   { height: 22px; }
-      .logo-wrap      { gap: 10px; }
+      .logo-name      { font-size: 11px; white-space: nowrap; letter-spacing: 0.03em; overflow: hidden; text-overflow: ellipsis; }
+      .logo-mark      { width: 28px; height: 28px; font-size: 9px; border-radius: 6px; }
+      .logo-divider   { height: 18px; }
+      .logo-wrap      { gap: 8px; min-width: 0; flex-shrink: 1; }
       .btn-nav        { display: none; }
-      .mob-hdr-lang   { padding: 3px 8px; font-size: 10.5px; }
+      .mob-hdr-lang   { padding: 3px 5px; font-size: 10.5px; }
+      .mob-hdr-lang .fi { width: 16px; height: 12px; }
       .hamburger      { width: 40px; height: 40px; }
       .hamburger span { width: 18px; }
 
