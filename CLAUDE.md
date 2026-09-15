@@ -8,6 +8,10 @@
 - If no reference image: design from scratch with high craft (see guardrails below).
 - Screenshot your output, compare against reference, fix mismatches, re-screenshot. Do at least 2 comparison rounds. Stop only when no visible differences remain or user says so.
 
+## Multilingual Build
+- **Edit `src/site.html` only**, then run `node build.mjs`. It generates `index.html` (DE), `en/`, `fr/`, `ru/`. Never edit those four files by hand; commit them after building.
+- Translations live side by side in the source (`<span class="de">…</span><span class="en">…</span>`, attributes as `data-i18n-alt-de="…"`); each built page keeps only its own language so Google sees one language per URL. Per-language `<head>` text is in `PAGES` in `build.mjs`.
+
 ## Local Server
 - **Always serve on localhost** — never screenshot a `file:///` URL.
 - Start the dev server: `node serve.mjs` (serves the project root at `http://localhost:3000`)
