@@ -1306,6 +1306,65 @@
     }
 
     .contact-map-btn:hover { color: var(--gold); }
+    .contact-map-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+    /* Click-to-load placeholder (same footprint as the map iframe) */
+    .map-consent {
+      height: 210px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 24px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 22% 18%, var(--gold-dim), transparent 55%),
+        radial-gradient(circle at 80% 90%, rgba(13,30,59,0.05), transparent 50%),
+        var(--cream);
+    }
+
+    .map-consent-text {
+      max-width: 340px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--text-muted);
+    }
+
+    .map-consent-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--white-card);
+      border: 1px solid var(--gold-border-s);
+      border-radius: 999px;
+      box-shadow: 0 1px 2px rgba(13,30,59,0.06), 0 4px 14px rgba(160,120,32,0.12);
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .map-consent-btn svg { color: var(--gold-dark); }
+    .map-consent-btn:hover { transform: translateY(-2px); }
+    .map-consent-btn:active { transform: translateY(0) scale(0.97); }
+    .map-consent-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    .map-consent-link {
+      font-size: 12px;
+      color: var(--gold-dark);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .map-consent-link:hover { color: var(--gold); }
+    .map-consent-link:active { opacity: 0.7; }
+    .map-consent-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
 
     /* Gold rule divider (draws itself in when its reveal parent appears) */
     .gold-rule {
@@ -2230,6 +2289,7 @@
           <span class="logo-name">Dr. Dr. Hausmann</span>
           <span class="logo-sub en">Tax Law &amp; Legal Counsel</span>
           <span class="logo-sub de">Steuerberatung &amp; Steuerrecht</span>
+          <span class="logo-sub fr">Droit fiscal &amp; conseil juridique</span>
           <span class="logo-sub ru">Налоговое право и консультации</span>
         </div>
       </a>
@@ -2243,22 +2303,22 @@
       </ul>
 
       <div class="mob-lang-header">
-        <a href="/" class="mob-hdr-lang active" onclick="this.href='/'+location.hash"><span class="fi fi-de"></span></a>
-        <a href="/en/" class="mob-hdr-lang" onclick="this.href='/en/'+location.hash"><span class="fi fi-gb"></span></a>
-        <a href="/fr/" class="mob-hdr-lang" onclick="this.href='/fr/'+location.hash"><span class="fi fi-fr"></span></a>
-        <a href="/ru/" class="mob-hdr-lang" onclick="this.href='/ru/'+location.hash"><span class="fi fi-ru"></span></a>
+        <a href="/" class="mob-hdr-lang active" onclick="langHref(this,'/')"><span class="fi fi-de"></span></a>
+        <a href="/en/" class="mob-hdr-lang" onclick="langHref(this,'/en/')"><span class="fi fi-gb"></span></a>
+        <a href="/fr/" class="mob-hdr-lang" onclick="langHref(this,'/fr/')"><span class="fi fi-fr"></span></a>
+        <a href="/ru/" class="mob-hdr-lang" onclick="langHref(this,'/ru/')"><span class="fi fi-ru"></span></a>
       </div>
 
-      <button class="hamburger" id="hamburger-btn" aria-label="Menü öffnen">
+      <button class="hamburger" id="hamburger-btn" aria-controls="mobile-menu" aria-expanded="false" data-i18n-aria-label-de="Menü öffnen" data-i18n-aria-label-en="Open menu" data-i18n-aria-label-fr="Ouvrir le menu" data-i18n-aria-label-ru="Открыть меню" data-i18n-data-label-close-de="Menü schließen" data-i18n-data-label-close-en="Close menu" data-i18n-data-label-close-fr="Fermer le menu" data-i18n-data-label-close-ru="Закрыть меню">
         <span></span><span></span><span></span>
       </button>
 
       <div class="nav-right">
 <div class="lang-switcher">
-          <a href="/" class="lang-btn active" onclick="this.href='/'+location.hash"><span class="fi fi-de"></span> DE</a>
-          <a href="/en/" class="lang-btn" onclick="this.href='/en/'+location.hash"><span class="fi fi-gb"></span> EN</a>
-          <a href="/fr/" class="lang-btn" onclick="this.href='/fr/'+location.hash"><span class="fi fi-fr"></span> FR</a>
-          <a href="/ru/" class="lang-btn" onclick="this.href='/ru/'+location.hash"><span class="fi fi-ru"></span> RU</a>
+          <a href="/" class="lang-btn active" onclick="langHref(this,'/')"><span class="fi fi-de"></span> DE</a>
+          <a href="/en/" class="lang-btn" onclick="langHref(this,'/en/')"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/" class="lang-btn" onclick="langHref(this,'/fr/')"><span class="fi fi-fr"></span> FR</a>
+          <a href="/ru/" class="lang-btn" onclick="langHref(this,'/ru/')"><span class="fi fi-ru"></span> RU</a>
         </div>
         <a href="#contact" class="btn-nav">
           <span class="en">Request Consultation</span>
@@ -2285,12 +2345,12 @@
         <span class="en">Clients</span><span class="de">Mandanten</span><span class="fr">Clients</span><span class="ru">Клиенты</span>
         <span class="menu-arrow">→</span>
       </a>
-      <a href="#datev" onclick="closeMobileMenu()">
-        DATEV
-        <span class="menu-arrow">→</span>
-      </a>
       <a href="#contact" onclick="closeMobileMenu()">
         <span class="en">Contact</span><span class="de">Kontakt</span><span class="fr">Contact</span><span class="ru">Контакт</span>
+        <span class="menu-arrow">→</span>
+      </a>
+      <a href="#datev" onclick="closeMobileMenu()">
+        DATEV
         <span class="menu-arrow">→</span>
       </a>
     </div>
@@ -2306,10 +2366,10 @@
           <span style="font-family:'Inter',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;color:var(--gold-pale);text-transform:uppercase;">DATEV</span>
         </a>
         <div class="mobile-lang-switcher">
-          <a href="/" class="mobile-lang-btn active" onclick="this.href='/'+location.hash"><span class="fi fi-de"></span> DE</a>
-          <a href="/en/" class="mobile-lang-btn" onclick="this.href='/en/'+location.hash"><span class="fi fi-gb"></span> EN</a>
-          <a href="/fr/" class="mobile-lang-btn" onclick="this.href='/fr/'+location.hash"><span class="fi fi-fr"></span> FR</a>
-          <a href="/ru/" class="mobile-lang-btn" onclick="this.href='/ru/'+location.hash"><span class="fi fi-ru"></span> RU</a>
+          <a href="/" class="mobile-lang-btn active" onclick="langHref(this,'/')"><span class="fi fi-de"></span> DE</a>
+          <a href="/en/" class="mobile-lang-btn" onclick="langHref(this,'/en/')"><span class="fi fi-gb"></span> EN</a>
+          <a href="/fr/" class="mobile-lang-btn" onclick="langHref(this,'/fr/')"><span class="fi fi-fr"></span> FR</a>
+          <a href="/ru/" class="mobile-lang-btn" onclick="langHref(this,'/ru/')"><span class="fi fi-ru"></span> RU</a>
         </div>
       </div>
     </div>
@@ -2554,7 +2614,7 @@
         <img src="/brand/kanzlei-hausmann-profile.png" width="512" height="341" data-i18n-alt-de="Dr. Dr. Hans-Christian Hausmann, Rechtsanwalt und Fachanwalt für Steuerrecht in Berlin" data-i18n-alt-en="Dr. Dr. Hans-Christian Hausmann, attorney and tax law specialist in Berlin" data-i18n-alt-fr="Dr. Dr. Hans-Christian Hausmann, avocat et spécialiste en droit fiscal à Berlin" data-i18n-alt-ru="Dr. Dr. Ганс-Кристиан Хаусманн, адвокат и специалист по налоговому праву в Берлине" />
         <div class="attorney-photo-label">
           <h3>Dr. Dr. Hans-Christian Hausmann</h3>
-          <p class="en">Rechtsanwalt &amp; Fachanwalt für Steuerrecht</p>
+          <p class="en">Rechtsanwalt &amp; Tax Law Specialist</p>
           <p class="de">Rechtsanwalt &amp; Fachanwalt für Steuerrecht</p>
           <p class="fr">Avocat et spécialiste en droit fiscal</p>
           <p class="ru">Адвокат и специалист по налоговому праву</p>
@@ -3012,13 +3072,19 @@
           <p class="form-note ru">Все данные обрабатываются строго конфиденциально в соответствии с немецким законодательством о защите персональных данных (DSGVO / GDPR).</p>
         </div>
         <div class="contact-map-card">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d607.6609928977606!2d13.3272631!3d52.467475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8466e11aeba65%3A0x825f8a19698116b2!2sDr.%20Dr.%20Hans-Christian%20Hausmann!5e0!3m2!1sen!2smn!4v1773819787689!5m2!1sen!2smn"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Kanzlei Dr. Dr. Hausmann – Bundesallee 91, 12161 Berlin">
-          </iframe>
+          <div class="map-consent" id="map-consent" data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d607.6609928977606!2d13.3272631!3d52.467475!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8466e11aeba65%3A0x825f8a19698116b2!2sDr.%20Dr.%20Hans-Christian%20Hausmann!5e0!3m2!1sen!2smn!4v1773819787689!5m2!1sen!2smn" data-title="Kanzlei Dr. Dr. Hausmann – Bundesallee 91, 12161 Berlin">
+            <p class="map-consent-text">
+              <span class="de">Beim Laden der Karte werden Daten, u.&nbsp;a. Ihre <span style="white-space:nowrap">IP-Adresse</span>, an Google übertragen.</span>
+              <span class="en">Loading the map sends data, including your IP address, to Google.</span>
+              <span class="fr">Le chargement de la carte transmet des données, dont votre adresse&nbsp;IP, à Google.</span>
+              <span class="ru">При загрузке карты данные, в том числе ваш <span style="white-space:nowrap">IP-адрес</span>, передаются в Google.</span>
+            </p>
+            <button type="button" class="map-consent-btn" id="map-consent-btn">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <span class="de">Karte laden</span><span class="en">Load map</span><span class="fr">Afficher la carte</span><span class="ru">Загрузить карту</span>
+            </button>
+            <a href="#" class="map-consent-link" onclick="openModal('datenschutz-modal');return false;"><span class="de">Datenschutzerklärung</span><span class="en">Privacy Policy</span><span class="fr">Politique de confidentialité</span><span class="ru">Политика конфиденциальности</span></a>
+          </div>
           <div class="contact-map-footer">
             <p class="contact-map-address">Bundesallee 91, 12161 Berlin</p>
             <a href="https://www.google.com/maps/place/Dr.+Dr.+Hans-Christian+Hausmann/@52.467475,13.3272631,19z/data=!3m1!5s0x47a85078deb7835d:0x1fb2906a7d461a2f!4m6!3m5!1s0x47a8466e11aeba65:0x825f8a19698116b2!8m2!3d52.467475!4d13.3279068!16s%2Fg%2F11g1f8w6mm" target="_blank" rel="noopener" class="contact-map-btn">
@@ -3132,10 +3198,10 @@
   </footer>
 
   <!-- Impressum Modal -->
-  <div id="impressum-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);overflow-y:auto;padding:40px 16px;">
+  <div id="impressum-modal" role="dialog" aria-modal="true" aria-labelledby="impressum-title" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);overflow-y:auto;padding:40px 16px;">
     <div style="max-width:760px;margin:0 auto;background:#fff;border-radius:8px;padding:48px;position:relative;font-family:sans-serif;color:#1a1a1a;line-height:1.7;">
-      <button onclick="closeModal('impressum-modal')" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#666;">&times;</button>
-      <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:24px;color:#0a2540;">Impressum</h2>
+      <button type="button" onclick="closeModal('impressum-modal')" data-i18n-aria-label-de="Schließen" data-i18n-aria-label-en="Close" data-i18n-aria-label-fr="Fermer" data-i18n-aria-label-ru="Закрыть" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#666;">&times;</button>
+      <h2 id="impressum-title" style="font-size:1.8rem;font-weight:700;margin-bottom:24px;color:#0a2540;">Impressum</h2>
       <p><strong>Angaben gemäß § 5 TMG:</strong><br>
       Rechtsanwalt<br>Dr. Dr. Hans-Christian Hausmann<br>Bundesallee 91<br>12161 Berlin</p>
       <h3 style="margin-top:24px;">Kontakt</h3>
@@ -3167,10 +3233,10 @@
   </div>
 
   <!-- Datenschutz Modal -->
-  <div id="datenschutz-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);overflow-y:auto;padding:40px 16px;">
+  <div id="datenschutz-modal" role="dialog" aria-modal="true" aria-labelledby="datenschutz-title" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);overflow-y:auto;padding:40px 16px;">
     <div style="max-width:760px;margin:0 auto;background:#fff;border-radius:8px;padding:48px;position:relative;font-family:sans-serif;color:#1a1a1a;line-height:1.7;">
-      <button onclick="closeModal('datenschutz-modal')" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#666;">&times;</button>
-      <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:24px;color:#0a2540;">Datenschutzerklärung</h2>
+      <button type="button" onclick="closeModal('datenschutz-modal')" data-i18n-aria-label-de="Schließen" data-i18n-aria-label-en="Close" data-i18n-aria-label-fr="Fermer" data-i18n-aria-label-ru="Закрыть" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:#666;">&times;</button>
+      <h2 id="datenschutz-title" style="font-size:1.8rem;font-weight:700;margin-bottom:24px;color:#0a2540;">Datenschutzerklärung</h2>
       <h2 style="font-size:1.2rem;margin-top:24px;">1. Datenschutz auf einen Blick</h2>
       <h3 style="margin-top:16px;">Allgemeine Hinweise</h3>
       <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
@@ -3194,11 +3260,13 @@
       <p>Der Provider der Seiten erhebt und speichert automatisch Informationen in Server-Log-Dateien: Browsertyp, Betriebssystem, Referrer URL, Hostname, Uhrzeit der Serveranfrage, IP-Adresse.</p>
       <h3 style="margin-top:16px;">Anfrage per E-Mail, Telefon oder Kontaktformular</h3>
       <p>Wenn Sie uns per E-Mail, Telefon oder Kontaktformular kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO.</p>
+      <h3 style="margin-top:16px;">Kontaktformular (Web3Forms)</h3>
+      <p>Für die technische Übermittlung des Kontaktformulars nutzen wir den Dienst Web3Forms. Wenn Sie das Formular absenden, werden Ihre Eingaben (z. B. Name, E-Mail-Adresse, Telefonnummer und Nachricht) an die Server von Web3Forms übertragen und von dort per E-Mail an uns weitergeleitet. Eine Verarbeitung außerhalb der EU kann dabei nicht ausgeschlossen werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit Ihre Anfrage auf die Anbahnung oder Durchführung eines Mandats gerichtet ist, im Übrigen Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bearbeitung von Anfragen). Weitere Informationen: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener">https://web3forms.com/privacy</a></p>
       <h2 style="font-size:1.2rem;margin-top:24px;">5. Plugins und Tools</h2>
       <h3 style="margin-top:16px;">Google Web Fonts</h3>
       <p>Diese Seite nutzt Web Fonts von Google zur einheitlichen Darstellung von Schriftarten. Beim Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank">https://policies.google.com/privacy</a></p>
       <h3 style="margin-top:16px;">Google Maps</h3>
-      <p>Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <p>Diese Seite kann eine Karte des Dienstes Google Maps anzeigen. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Karte wird erst geladen, wenn Sie auf „Karte laden“ klicken. Erst dann stellt Ihr Browser eine Verbindung zu Servern von Google her; dabei werden insbesondere Ihre IP-Adresse und technische Daten an Google übertragen, eine Übermittlung in die USA ist möglich. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Die Einwilligung gilt nur für den jeweiligen Seitenaufruf; ohne erneuten Klick wird die Karte nicht geladen. Weitere Informationen: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
     </div>
   </div>
 
@@ -3207,20 +3275,43 @@
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    hamburgerBtn.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburgerBtn.classList.toggle('open', isOpen);
-      hamburgerBtn.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
-    });
+    const menuLabels = { open: hamburgerBtn.getAttribute('aria-label'), close: hamburgerBtn.dataset.labelClose };
 
+    function setMobileMenu(open) {
+      mobileMenu.classList.toggle('open', open);
+      hamburgerBtn.classList.toggle('open', open);
+      hamburgerBtn.setAttribute('aria-expanded', String(open));
+      hamburgerBtn.setAttribute('aria-label', open ? menuLabels.close : menuLabels.open);
+    }
+
+    hamburgerBtn.addEventListener('click', () => setMobileMenu(!mobileMenu.classList.contains('open')));
+
+    // Language switch keeps the section currently in view (tracked by the scroll-spy below)
+    function langHref(link, base) {
+      const id = typeof window.__navSpyCurrent === 'function' ? window.__navSpyCurrent() : location.hash.slice(1);
+      link.href = base + (id ? '#' + id : '');
+    }
+
+    let modalTrigger = null;
     function openModal(id) {
-      document.getElementById(id).style.display = 'block';
+      const modal = document.getElementById(id);
+      modalTrigger = document.activeElement;
+      modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
+      modal.querySelector('button').focus();
     }
     function closeModal(id) {
       document.getElementById(id).style.display = 'none';
       document.body.style.overflow = '';
+      if (modalTrigger) modalTrigger.focus();
+      modalTrigger = null;
     }
+    document.addEventListener('keydown', function(e) {
+      if (e.key !== 'Escape') return;
+      ['impressum-modal','datenschutz-modal'].forEach(function(id) {
+        if (document.getElementById(id).style.display === 'block') closeModal(id);
+      });
+    });
     document.addEventListener('click', function(e) {
       ['impressum-modal','datenschutz-modal'].forEach(function(id) {
         const modal = document.getElementById(id);
@@ -3229,8 +3320,20 @@
     });
 
     function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      hamburgerBtn.classList.remove('open');
+      setMobileMenu(false);
+    }
+
+    // ── Google Maps: only loaded after the visitor opts in (DSGVO) ──
+    const mapConsent = document.getElementById('map-consent');
+    if (mapConsent) {
+      document.getElementById('map-consent-btn').addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = mapConsent.dataset.src;
+        iframe.title = mapConsent.dataset.title;
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        mapConsent.replaceWith(iframe);
+      });
     }
 
     // Form submit handler: powered by Web3Forms
@@ -3342,7 +3445,7 @@
 
     // ── Hero Parallax ──────────────────────────────
     const heroSection = document.querySelector('.hero');
-    if (heroSection) {
+    if (heroSection && !prefersReducedMotion) {
       const heroInner = heroSection.querySelector('.hero-inner');
       window.addEventListener('scroll', () => {
         const y = window.scrollY;
@@ -3371,7 +3474,7 @@
       siteNav.classList.toggle('nav-scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // ── Nav: magic line + scroll-spy + URL hash ────
+    // ── Nav: magic line + scroll-spy ───────────────
     (function () {
       const linksUl = document.querySelector('.nav-links');
       if (!linksUl) return;
@@ -3410,11 +3513,13 @@
       const spySections = spyIds.map(id => document.getElementById(id)).filter(Boolean);
 
       if ('IntersectionObserver' in window) {
+        // Read by langHref() so switching language keeps the section in view
+        window.__navSpyCurrent = () => currentId;
+
         const spyObserver = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               setActive(entry.target.id);
-              history.replaceState(null, '', '#' + entry.target.id);
             }
           });
         }, { rootMargin: '-35% 0px -55% 0px' });
@@ -3427,7 +3532,6 @@
             entries.forEach(entry => {
               if (entry.isIntersecting) {
                 setActive('');
-                history.replaceState(null, '', location.pathname + location.search);
               }
             });
           }, { rootMargin: '-35% 0px -55% 0px' });
